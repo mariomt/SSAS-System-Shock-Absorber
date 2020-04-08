@@ -12,7 +12,9 @@ namespace DataAccess
         /// <summary>
         /// Consulta para buscar un usuario por su correo y contraseña.
         /// </summary>
-        public const string selectUserByCredentials = @"SELECT  UsuarioID, Correo, Contrasena, RolID, Activo FROM Usuarios WHERE Correo=@email AND Contrasena=@pass";
+        public const string selectUserByCredentials = @"SELECT UsuarioID, us.Correo, us.Contrasena, us.Activo, rl.RolID, rl.Descripcion 
+                                                        FROM Usuarios as us INNER JOIN Roles as rl ON us.RolID=rl.RolID 
+                                                        WHERE Correo=@email AND Contrasena=@pass";
 
         #endregion
 

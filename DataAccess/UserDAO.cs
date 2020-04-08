@@ -36,9 +36,10 @@ namespace DataAccess
         /// <returns>Regesa un nuevo usuario</returns>
         public User logIn(User pUser)
         {
-            var result = dbConn.Query<User>(Queries.selectUserByCredentials, new { 
-                email= pUser.Correo, pass=pUser.Contrasena
-            }).FirstOrDefault();
+            var result = dbConn.Query<User, Rol, User>(Queries.selectUserByCredentials,
+                (user, rol) => { user.rol = rol; return user; }, new {
+                    email = pUser.Correo, pass = pUser.Contrasena
+                }, splitOn: "UsuarioID,RolID").FirstOrDefault();
 
             if(result != null)
             {

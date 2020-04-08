@@ -21,7 +21,7 @@ namespace Domain
                 user.UsuarioID = newUser.UsuarioID;
                 user.Contrasena = "";
                 user.Activo = newUser.Activo;
-                user.RolID = newUser.RolID;
+                user.rol = newUser.rol;
                 return true;
             }
             return false;
