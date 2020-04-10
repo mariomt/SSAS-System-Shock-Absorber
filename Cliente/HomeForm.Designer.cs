@@ -32,19 +32,19 @@
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
@@ -99,6 +99,17 @@
             this.panelLogo.Size = new System.Drawing.Size(205, 100);
             this.panelLogo.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(78, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SSAS";
+            // 
             // iconPictureBox4
             // 
             this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(62)))), ((int)(((byte)(108)))));
@@ -111,17 +122,6 @@
             this.iconPictureBox4.Size = new System.Drawing.Size(64, 64);
             this.iconPictureBox4.TabIndex = 1;
             this.iconPictureBox4.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(78, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "SSAS";
             // 
             // panel2
             // 
@@ -141,6 +141,50 @@
             this.panel2.Size = new System.Drawing.Size(819, 79);
             this.panel2.TabIndex = 2;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblRol.Location = new System.Drawing.Point(37, 32);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(58, 16);
+            this.lblRol.TabIndex = 8;
+            this.lblRol.Text = "Usuario:";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserName.Location = new System.Drawing.Point(68, 11);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(58, 16);
+            this.lblUserName.TabIndex = 7;
+            this.lblUserName.Text = "Usuario:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(6, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Rol:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(6, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Usuario:";
             // 
             // label1
             // 
@@ -165,6 +209,7 @@
             this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox3.TabIndex = 3;
             this.iconPictureBox3.TabStop = false;
+            this.iconPictureBox3.Click += new System.EventHandler(this.iconPictureBox3_Click);
             // 
             // iconPictureBox2
             // 
@@ -212,50 +257,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(6, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Usuario:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(6, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Rol:";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserName.Location = new System.Drawing.Point(68, 11);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(58, 16);
-            this.lblUserName.TabIndex = 7;
-            this.lblUserName.Text = "Usuario:";
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblRol.Location = new System.Drawing.Point(37, 32);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(58, 16);
-            this.lblRol.TabIndex = 8;
-            this.lblRol.Text = "Usuario:";
             // 
             // HomeForm
             // 
