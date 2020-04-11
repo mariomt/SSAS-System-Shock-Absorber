@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
-<<<<<<< HEAD
 using DataAccess;
 
 namespace Domain
@@ -14,12 +13,9 @@ namespace Domain
         public void insertNewProduct(ref Product product)
         {
             new ProductDAO().insertProduct(product);
-=======
 
-namespace Domain
-{
-     public class ProductDomain
-    {
+        }
+        
         public IEnumerable<Product> getProducts()
         {
             Product producto1 = new Product();
@@ -35,7 +31,6 @@ namespace Domain
             return lista;
 
 
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
         }
     }
 }

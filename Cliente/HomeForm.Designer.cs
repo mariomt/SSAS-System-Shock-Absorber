@@ -46,10 +46,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -89,11 +85,7 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
-<<<<<<< HEAD
             this.panelMenuContent.Controls.Add(this.productsBtn);
-=======
-            this.panelMenuContent.Controls.Add(this.iconButton1);
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
             this.panelMenuContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuContent.Location = new System.Drawing.Point(0, 89);
             this.panelMenuContent.Name = "panelMenuContent";
@@ -103,18 +95,22 @@
             // productsBtn
             // 
             this.productsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.productsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productsBtn.FlatAppearance.BorderSize = 0;
+            this.productsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productsBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.productsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(70)))), ((int)(((byte)(108)))));
+            this.productsBtn.ForeColor = System.Drawing.Color.White;
             this.productsBtn.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.productsBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(70)))), ((int)(((byte)(108)))));
+            this.productsBtn.IconColor = System.Drawing.Color.White;
             this.productsBtn.IconSize = 24;
             this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.productsBtn.Location = new System.Drawing.Point(2, 2);
+            this.productsBtn.Location = new System.Drawing.Point(0, 0);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.productsBtn.Rotation = 0D;
-            this.productsBtn.Size = new System.Drawing.Size(201, 58);
+            this.productsBtn.Size = new System.Drawing.Size(205, 68);
             this.productsBtn.TabIndex = 1;
             this.productsBtn.Text = "Agregar Producto";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,35 +282,12 @@
             // panelDesktop
             // 
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDesktop.Location = new System.Drawing.Point(205, 89);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
             // 
-<<<<<<< HEAD
-=======
-            // iconButton1
-            // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(205, 70);
-            this.iconButton1.TabIndex = 0;
-            this.iconButton1.Text = "Desactivar Producto";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -364,10 +337,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-<<<<<<< HEAD
         private FontAwesome.Sharp.IconButton productsBtn;
-=======
-        private FontAwesome.Sharp.IconButton iconButton1;
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
     }
 }

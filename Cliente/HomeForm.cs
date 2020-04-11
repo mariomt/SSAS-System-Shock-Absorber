@@ -61,7 +61,6 @@ namespace Cliente
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf013, 0);
         }
-<<<<<<< HEAD
 
         private void productsBtn_Click(object sender, System.EventArgs e)
         {
@@ -69,7 +68,7 @@ namespace Cliente
             ProductosControl.AutoScroll = true;
             this.panelDesktop.Controls.Add(ProductosControl);
             ProductosControl.Show();
-=======
+        }
         private void Alert(string msg, Form_Alert.enumType type)
         {
             Form_Alert frm = new Form_Alert();
@@ -90,7 +89,6 @@ namespace Cliente
             }
             
             
->>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
         }
     }
 }
