@@ -28,16 +28,25 @@ namespace Cliente
             Product producto = new Product()
             {
                 Descripcion = descripcionTxt.Text,
-                PrecioVenta = Decimal.Parse(precioTxt.Text),
+                PrecioVenta = Double.Parse(precioTxt.Text),
                 Disponibilidad = Int32.Parse(disponibilidadTxt.Text),
-                IVA = Decimal.Parse(IVATxt.Text),
+                IVA = Double.Parse(IVATxt.Text),
                 Activo = activoChk.Checked
             };
 
             new ProductDomain().insertNewProduct(ref producto);
+            this.cleanForm();
+        }
+
+        private void cleanForm()
+        {
+            descripcionTxt.Text = "";
+            precioTxt.Text = "";
+            disponibilidadTxt.Text = "";
+            IVATxt.Text = "";
+            activoChk.Checked = false;
         }
         #region validaciones
-        #endregion
         private void InicializarRegEx()
         {
             this.validationRegEx = new Dictionary<string, Regex>();
@@ -87,5 +96,6 @@ namespace Cliente
             }
             return !match.Success;//valor "false" deja pasar el el teclado, valor "true" no deja pasar el teclado
         }
+        #endregion
     }
 }
