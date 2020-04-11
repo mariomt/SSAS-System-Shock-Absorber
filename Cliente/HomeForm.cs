@@ -71,5 +71,16 @@ namespace Cliente
             
             Alert("Mensaje de ejemplo...", Form_Alert.enumType.Success);
         }
+        UserControl ControlActive = null;
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (ControlActive == null)
+            {
+                ControlActive =new UserProductos();
+                panelDesktop.Controls.Add(ControlActive);
+            }
+            
+            
+        }
     }
 }
