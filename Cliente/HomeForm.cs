@@ -60,5 +60,13 @@ namespace Cliente
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf013, 0);
         }
+
+        private void productsBtn_Click(object sender, System.EventArgs e)
+        {
+            ProductsControl ProductosControl = new ProductsControl();
+            ProductosControl.AutoScroll = true;
+            this.panelDesktop.Controls.Add(ProductosControl);
+            ProductosControl.Show();
+        }
     }
 }

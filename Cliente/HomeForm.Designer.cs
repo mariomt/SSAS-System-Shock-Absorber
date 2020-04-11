@@ -31,21 +31,23 @@
             this.labelClose = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
+            this.productsBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
+            this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,11 +85,34 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
+            this.panelMenuContent.Controls.Add(this.productsBtn);
             this.panelMenuContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenuContent.Location = new System.Drawing.Point(0, 100);
+            this.panelMenuContent.Location = new System.Drawing.Point(0, 89);
             this.panelMenuContent.Name = "panelMenuContent";
-            this.panelMenuContent.Size = new System.Drawing.Size(205, 480);
+            this.panelMenuContent.Size = new System.Drawing.Size(205, 491);
             this.panelMenuContent.TabIndex = 1;
+            // 
+            // productsBtn
+            // 
+            this.productsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.productsBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.productsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(70)))), ((int)(((byte)(108)))));
+            this.productsBtn.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.productsBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(70)))), ((int)(((byte)(108)))));
+            this.productsBtn.IconSize = 24;
+            this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.productsBtn.Location = new System.Drawing.Point(2, 2);
+            this.productsBtn.Name = "productsBtn";
+            this.productsBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.productsBtn.Rotation = 0D;
+            this.productsBtn.Size = new System.Drawing.Size(201, 58);
+            this.productsBtn.TabIndex = 1;
+            this.productsBtn.Text = "Agregar Producto";
+            this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.productsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.productsBtn.UseVisualStyleBackColor = true;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // panelLogo
             // 
@@ -96,8 +121,19 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(205, 100);
+            this.panelLogo.Size = new System.Drawing.Size(205, 89);
             this.panelLogo.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(78, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "SSAS";
             // 
             // iconPictureBox4
             // 
@@ -111,17 +147,6 @@
             this.iconPictureBox4.Size = new System.Drawing.Size(64, 64);
             this.iconPictureBox4.TabIndex = 1;
             this.iconPictureBox4.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(78, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "SSAS";
             // 
             // panel2
             // 
@@ -141,6 +166,50 @@
             this.panel2.Size = new System.Drawing.Size(819, 79);
             this.panel2.TabIndex = 2;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblRol.Location = new System.Drawing.Point(37, 32);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(58, 16);
+            this.lblRol.TabIndex = 8;
+            this.lblRol.Text = "Usuario:";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUserName.Location = new System.Drawing.Point(68, 11);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(58, 16);
+            this.lblUserName.TabIndex = 7;
+            this.lblUserName.Text = "Usuario:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(6, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Rol:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.Location = new System.Drawing.Point(6, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Usuario:";
             // 
             // label1
             // 
@@ -213,50 +282,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(6, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Usuario:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(6, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Rol:";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUserName.Location = new System.Drawing.Point(68, 11);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(58, 16);
-            this.lblUserName.TabIndex = 7;
-            this.lblUserName.Text = "Usuario:";
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblRol.Location = new System.Drawing.Point(37, 32);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(58, 16);
-            this.lblRol.TabIndex = 8;
-            this.lblRol.Text = "Usuario:";
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -274,6 +299,7 @@
             this.Text = "HomeForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeForm_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
+            this.panelMenuContent.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
@@ -305,5 +331,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton productsBtn;
     }
 }

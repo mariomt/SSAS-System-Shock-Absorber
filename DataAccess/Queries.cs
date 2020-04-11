@@ -19,8 +19,9 @@ namespace DataAccess
         #endregion
 
         #region Productos
-        // Escribe las consultas de productos quí...
-
+        // Escribe las consultas de productos aquí...
+        //para insertar un nuevo producto
+        public const string insertNewProduct = @"INSERT INTO Productos(Descripcion,PrecioVenta,Disponibilidad,IVA,Activo) VALUES(@Descripcion,@PrecioVenta,@Disponibilidad,@IVA,@Activo)";
         #endregion
 
         #region Servicios
