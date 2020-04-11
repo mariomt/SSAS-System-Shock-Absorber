@@ -10,9 +10,9 @@ namespace Entities
     {
         public int ProductoID { get; set; }
         public string Descripcion { get; set; }
-        public decimal PrecioVenta { get; set; }
+        public double PrecioVenta { get; set; }
         public int Disponibilidad { get; set; }
-        public decimal IVA { get; set; }
+        public double IVA { get; set; }
         public bool Activo { get; set; }
     }
 }

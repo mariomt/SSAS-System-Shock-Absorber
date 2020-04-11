@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -60,6 +61,7 @@ namespace Cliente
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf013, 0);
         }
+<<<<<<< HEAD
 
         private void productsBtn_Click(object sender, System.EventArgs e)
         {
@@ -67,6 +69,28 @@ namespace Cliente
             ProductosControl.AutoScroll = true;
             this.panelDesktop.Controls.Add(ProductosControl);
             ProductosControl.Show();
+=======
+        private void Alert(string msg, Form_Alert.enumType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+        private void iconPictureBox3_Click(object sender, System.EventArgs e)
+        {
+            
+            Alert("Mensaje de ejemplo...", Form_Alert.enumType.Success);
+        }
+        UserControl ControlActive = null;
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (ControlActive == null)
+            {
+                ControlActive =new UserProductos();
+                panelDesktop.Controls.Add(ControlActive);
+            }
+            
+            
+>>>>>>> 193f4843febe3d89dcf6e5dccf055f3e4379c010
         }
     }
 }
