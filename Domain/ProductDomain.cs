@@ -18,19 +18,14 @@ namespace Domain
         
         public IEnumerable<Product> getProducts()
         {
-            Product producto1 = new Product();
-            producto1.ProductoID = 1;
-            producto1.Descripcion = "Tornillo";
-            producto1.PrecioVenta = 55.5;
-            producto1.IVA = 16;          
-            producto1.Activo = true;
+            
+            return new ProductDAO().getProdcts();
 
-            List<Product> products = new List<Product>();
-            products.Add(producto1);
-            IEnumerable<Product> lista = products;
-            return lista;
+        }
 
-
+        public IEnumerable<Product> SearchProducts(string parametro)
+        {
+            return new ProductDAO().SearchProducts(parametro);
         }
     }
 }

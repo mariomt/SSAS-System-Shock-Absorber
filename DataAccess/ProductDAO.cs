@@ -1,5 +1,7 @@
 ﻿using Dapper;
 using Entities;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -41,6 +43,23 @@ namespace DataAccess
                     Activo = product.Activo
                 }
             );
+
+          
+
+
         }
+
+        public IEnumerable<Product> getProdcts()
+        {
+            return dbConn.Query<Product>(Queries.selectAllProduct).ToList();
+
+                
+        }
+        public IEnumerable<Product> SearchProducts(string parametro)
+        {
+             
+            return dbConn.Query<Product>(Queries.searchProductsBydescription,new { product = "%" + parametro + "%"}).ToList();
+        }
+
     }
 }

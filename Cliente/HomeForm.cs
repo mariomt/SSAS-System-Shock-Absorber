@@ -90,5 +90,13 @@ namespace Cliente
             
             
         }
+
+        private void iconDesactivar_Click(object sender, EventArgs e)
+        {
+            ProductsControl ProductosControl = new ProductsControl();
+            ProductosControl.AutoScroll = true;
+            this.panelDesktop.Controls.Add(ProductosControl);
+            ProductosControl.Show();
+        }
     }
 }
