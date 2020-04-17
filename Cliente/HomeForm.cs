@@ -74,8 +74,10 @@ namespace Cliente
                     control.Dispose();
                     return;
                 }
+                this.panelDesktop.Controls.Remove(activeControl);
+                activeControl.Dispose();
+                activeControl = null;
             }
-
             control.Dock = DockStyle.Fill;
             control.AutoScroll = true;
             activeControl = control;
@@ -104,6 +106,11 @@ namespace Cliente
             ProductosControl.AutoScroll = true;
             this.panelDesktop.Controls.Add(ProductosControl);
             ProductosControl.Show();
+        }
+
+        private void servicesBtn_Click(object sender, EventArgs e)
+        {
+            openControl(new ServicesControl());
         }
     }
 }

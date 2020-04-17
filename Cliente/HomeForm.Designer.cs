@@ -31,6 +31,7 @@
             this.labelClose = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
+            this.servicesBtn = new FontAwesome.Sharp.IconButton();
             this.productsBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,12 +86,39 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
+            this.panelMenuContent.Controls.Add(this.servicesBtn);
             this.panelMenuContent.Controls.Add(this.productsBtn);
             this.panelMenuContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuContent.Location = new System.Drawing.Point(0, 89);
             this.panelMenuContent.Name = "panelMenuContent";
             this.panelMenuContent.Size = new System.Drawing.Size(205, 491);
             this.panelMenuContent.TabIndex = 1;
+            // 
+            // servicesBtn
+            // 
+            this.servicesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.servicesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.servicesBtn.FlatAppearance.BorderSize = 0;
+            this.servicesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.servicesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.servicesBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.servicesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicesBtn.ForeColor = System.Drawing.Color.White;
+            this.servicesBtn.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+            this.servicesBtn.IconColor = System.Drawing.Color.White;
+            this.servicesBtn.IconSize = 24;
+            this.servicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.servicesBtn.Location = new System.Drawing.Point(0, 68);
+            this.servicesBtn.Name = "servicesBtn";
+            this.servicesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.servicesBtn.Rotation = 0D;
+            this.servicesBtn.Size = new System.Drawing.Size(205, 68);
+            this.servicesBtn.TabIndex = 2;
+            this.servicesBtn.Text = "Gestión de Servicios";
+            this.servicesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.servicesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.servicesBtn.UseVisualStyleBackColor = true;
+            this.servicesBtn.Click += new System.EventHandler(this.servicesBtn_Click);
             // 
             // productsBtn
             // 
@@ -100,9 +128,9 @@
             this.productsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
             this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productsBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.productsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsBtn.ForeColor = System.Drawing.Color.White;
-            this.productsBtn.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.productsBtn.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.productsBtn.IconColor = System.Drawing.Color.White;
             this.productsBtn.IconSize = 24;
             this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,7 +140,7 @@
             this.productsBtn.Rotation = 0D;
             this.productsBtn.Size = new System.Drawing.Size(205, 68);
             this.productsBtn.TabIndex = 1;
-            this.productsBtn.Text = "Agregar Producto";
+            this.productsBtn.Text = "Gestión de Producto";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.productsBtn.UseVisualStyleBackColor = true;
@@ -303,6 +331,7 @@
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeForm_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
             this.panelMenuContent.ResumeLayout(false);
@@ -338,5 +367,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton productsBtn;
+        private FontAwesome.Sharp.IconButton servicesBtn;
     }
 }
