@@ -32,7 +32,7 @@ namespace Cliente
         private void button1_Click(object sender, EventArgs e)
         {
             string validacion = ValidacionFinalDeTextBox();
-            if (validacion.Length > 0)
+            if (validacion.Length == 0)
             {
                 Product producto = new Product()
                 {
@@ -54,7 +54,7 @@ namespace Cliente
                 ValoresDeLosTextos.Add("IVA", IVATxt.Text);
                 ValoresDeLosTextos.Add("Precio", precioTxt.Text);
                 ValoresDeLosTextos.Add("Disponibilidad", disponibilidadTxt.Text);
-                MessageBox.Show($"Valor invalido en el campo '{validacion}'.\n Valor:{ValoresDeLosTextos[validacion]}");
+                Alert($"Valor invalido en el campo '{validacion}'.\n Valor:{ValoresDeLosTextos[validacion]}", Form_Alert.enumType.Error);
             }
         
             this.cleanForm();
