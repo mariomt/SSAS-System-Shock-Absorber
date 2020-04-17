@@ -24,6 +24,11 @@ namespace Cliente
             InitializeComponent();
             this.InicializarRegEx();
         }
+        private void Alert(string msg, Form_Alert.enumType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             string validacion = ValidacionFinalDeTextBox();
@@ -39,6 +44,8 @@ namespace Cliente
                 };
 
                 new ProductDomain().insertNewProduct(ref producto);
+                Alert("Producto Guardado!", Form_Alert.enumType.Success);
+                cargardgv();
             }
             else
             {
@@ -51,7 +58,7 @@ namespace Cliente
             }
         
             this.cleanForm();
-            cargardgv();
+            
         }
 
 
@@ -141,14 +148,10 @@ namespace Cliente
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
            var productos = new ProductDomain().SearchProducts(txtBuscar.Text);
-
-
             dataGridView1.Rows.Clear();
             foreach(var producto in productos)
             {
-
                 DataGridViewRow celda = new DataGridViewRow();
                 celda.CreateCells(dataGridView1);
                 celda.Cells[0].Value = producto.ProductoID;
@@ -158,27 +161,15 @@ namespace Cliente
                 celda.Cells[4].Value = producto.Disponibilidad;
                 celda.Cells[5].Value = producto.Activo;
                 dataGridView1.Rows.Add(celda);
-
-
-
-
             }
-
-
-
         }
         private void cargardgv()
         {
-
-
+            dataGridView1.Rows.Clear();
             ProductDomain productos = new ProductDomain();
             var listaproductos  = productos.getProducts();
-            
-            
-
             foreach (var producto in listaproductos)
             {
-                
                 DataGridViewRow celda = new DataGridViewRow();
                 celda.CreateCells(dataGridView1);
                 celda.Cells[0].Value = producto.ProductoID;
@@ -188,10 +179,6 @@ namespace Cliente
                 celda.Cells[4].Value = producto.Disponibilidad;
                 celda.Cells[5].Value = producto.Activo;
                 dataGridView1.Rows.Add(celda);
-                
-               
-
-
             }
 
         }
@@ -205,10 +192,6 @@ namespace Cliente
         {
 
             cargardgv();
-
-
-
-
 
         }
 
@@ -239,14 +222,10 @@ namespace Cliente
             desactive.textBox1.TextChanged += new EventHandler(metodo2);
 
             desactive.ShowDialog(this);
-
-
             
         }
         public void metodo2(object sender, EventArgs e)
-
         {
-
             MotivoCancelacion = ((TextBox)sender).Text;
         }
 

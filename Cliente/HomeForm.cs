@@ -9,6 +9,7 @@ namespace Cliente
     {
         LoginForm loginForm = null;
         User currentUser = null;
+        UserControl activeControl = null;
         public HomeForm(LoginForm loginForm,User user)
         {
             this.loginForm = loginForm;
@@ -62,13 +63,30 @@ namespace Cliente
             SendMessage(this.Handle, 0x112, 0xf013, 0);
         }
 
+
+        private void openControl(UserControl control)
+        {
+            
+            if(activeControl != null)
+            {
+                if (activeControl.GetType().Equals(control.GetType()))
+                {
+                    control.Dispose();
+                    return;
+                }
+            }
+
+            control.Dock = DockStyle.Fill;
+            control.AutoScroll = true;
+            activeControl = control;
+            this.panelDesktop.Controls.Add(activeControl);
+            activeControl.Show();
+        }
         private void productsBtn_Click(object sender, System.EventArgs e)
         {
-            ProductsControl ProductosControl = new ProductsControl();
-            ProductosControl.AutoScroll = true;
-            this.panelDesktop.Controls.Add(ProductosControl);
-            ProductosControl.Show();
+            openControl(new ProductsControl());
         }
+
         private void Alert(string msg, Form_Alert.enumType type)
         {
             Form_Alert frm = new Form_Alert();
@@ -78,17 +96,6 @@ namespace Cliente
         {
             
             Alert("Mensaje de ejemplo...", Form_Alert.enumType.Success);
-        }
-        UserControl ControlActive = null;
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            if (ControlActive == null)
-            {
-                ControlActive =new UserProductos();
-                panelDesktop.Controls.Add(ControlActive);
-            }
-            
-            
         }
 
         private void iconDesactivar_Click(object sender, EventArgs e)
