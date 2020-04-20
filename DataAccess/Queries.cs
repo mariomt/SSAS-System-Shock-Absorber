@@ -31,7 +31,7 @@ namespace DataAccess
 
         #region Servicios
         // Escribe las consultas de Servicios quí...
-
+        public const string selectAllServices = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios";
         #endregion
 
         #region Ventas
