@@ -22,12 +22,9 @@ namespace DataAccess
         // Escribe las consultas de productos aquí...
         //para insertar un nuevo producto
         public const string insertNewProduct = @"INSERT INTO Productos(Descripcion,PrecioVenta,Disponibilidad,IVA,Activo) VALUES(@Descripcion,@PrecioVenta,@Disponibilidad,@IVA,@Activo)";
-        #endregion
-        public const string selectAllProduct = @"SELECT ProductoID,Descripcion,PrecioVenta,
-                                                Disponibilidad,IVA,Activo FROM Productos";
-
+        public const string selectAllProduct = @"SELECT ProductoID,Descripcion,PrecioVenta, Disponibilidad,IVA,Activo FROM Productos";
         public const string searchProductsBydescription = @"SELECT ProductoID,Descripcion,PrecioVenta,Disponibilidad,IVA,Activo FROM Productos where Descripcion LIKE @product";
-
+        #endregion
 
         #region Servicios
         // Escribe las consultas de Servicios quí...
