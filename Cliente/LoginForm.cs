@@ -92,7 +92,7 @@ namespace Cliente
         {
             User user = new User()
             {
-                Correo = txtUser.Text,
+                NombreUsuario = txtUser.Text.ToLower(),
                 Contrasena = txtPassword.Text
             };
 

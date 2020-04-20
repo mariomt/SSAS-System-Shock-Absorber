@@ -19,7 +19,11 @@ namespace Domain
             if(newUser!= null)
             {
                 user.UsuarioID = newUser.UsuarioID;
+                user.NombreUsuario = newUser.NombreUsuario;
                 user.Contrasena = "";
+                user.Nombre = newUser.Nombre;
+                user.ApellidoPaterno = newUser.ApellidoPaterno;
+                user.ApellidoMaterno = newUser.ApellidoMaterno;
                 user.Activo = newUser.Activo;
                 user.rol = newUser.rol;
                 return true;

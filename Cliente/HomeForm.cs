@@ -16,7 +16,7 @@ namespace Cliente
             this.currentUser = user;
             InitializeComponent();
             //this.labelClose.Text=$"Hola {user.Correo}";
-            lblUserName.Text = user.Correo;
+            lblUserName.Text = user.Nombre +" "+ user.ApellidoPaterno;
             lblRol.Text = user.rol.Descripcion;
         }
 
@@ -89,15 +89,9 @@ namespace Cliente
             openControl(new ProductsControl());
         }
 
-        private void Alert(string msg, Form_Alert.enumType type)
-        {
-            Form_Alert frm = new Form_Alert();
-            frm.showAlert(msg, type);
-        }
         private void iconPictureBox3_Click(object sender, System.EventArgs e)
         {
             
-            Alert("Mensaje de ejemplo...", Form_Alert.enumType.Success);
         }
 
         private void iconDesactivar_Click(object sender, EventArgs e)

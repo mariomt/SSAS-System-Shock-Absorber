@@ -5,8 +5,11 @@ namespace Entities
     public class PartialUser
     {
         public int UsuarioID { get; set; }
-        public string Correo { get; set; }
+        public string NombreUsuario { get; set; }
         public string Contrasena { get; set; }
+        public string Nombre { get; set; }
+        public string ApellidoPaterno { get; set; }
+        public string ApellidoMaterno { get; set; }
         public bool Activo { get; set; }
     }
 
