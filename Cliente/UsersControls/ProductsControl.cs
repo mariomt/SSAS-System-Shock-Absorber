@@ -24,11 +24,6 @@ namespace Cliente
             InitializeComponent();
             this.InicializarRegEx();
         }
-        private void Alert(string msg, Form_Alert.enumType type)
-        {
-            Form_Alert frm = new Form_Alert();
-            frm.showAlert(msg, type);
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             string validacion = ValidacionFinalDeTextBox();
@@ -44,7 +39,7 @@ namespace Cliente
                 };
 
                 new ProductDomain().insertNewProduct(ref producto);
-                Alert("Producto Guardado!", Form_Alert.enumType.Success);
+                Tools.Alert("Producto Guardado!", Form_Alert.enumType.Success);
                 cargardgv();
             }
             else
@@ -54,7 +49,7 @@ namespace Cliente
                 ValoresDeLosTextos.Add("IVA", IVATxt.Text);
                 ValoresDeLosTextos.Add("Precio", precioTxt.Text);
                 ValoresDeLosTextos.Add("Disponibilidad", disponibilidadTxt.Text);
-                Alert($"Valor invalido en el campo '{validacion}'.\n Valor:{ValoresDeLosTextos[validacion]}", Form_Alert.enumType.Error);
+                Tools.Alert($"Valor invalido en el campo '{validacion}'.\n Valor:{ValoresDeLosTextos[validacion]}", Form_Alert.enumType.Error);
             }
         
             this.cleanForm();
