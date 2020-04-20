@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DataAccess;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,18 @@ namespace Domain
 {
     public class ServiceDomain
     {
+        public bool insertNewProduct(Service service)
+        {
+            return new ServiceDAO().insertNewService(service);
+        }
         public IEnumerable<Service> GetAll()
         {
-            return null;
+            return new ServiceDAO().GetAll();
         }
 
         public IEnumerable<Service> SearchByName(string filter)
         {
-            return null;
+            return new ServiceDAO().searchsByName(filter);
         }
     }
 }
