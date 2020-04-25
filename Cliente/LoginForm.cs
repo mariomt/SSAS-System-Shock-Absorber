@@ -98,6 +98,7 @@ namespace Cliente
 
             if(new UserDomain().logIn(ref user))
             {
+                MainInformation.user = user;
                 HomeForm hf1 = new HomeForm(this, user);
                 hf1.Show();
                 this.Hide();

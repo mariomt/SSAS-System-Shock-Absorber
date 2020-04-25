@@ -33,13 +33,13 @@ namespace DataAccess
             }
         }
 
-        public bool insertNewService(Service service)
+        public bool insertNewService(Service pService)
         {
             var result = dbConn.Execute(@"INSERT INTO Servicios(Nombre, Descripcion, Activo) VALUES(@name,@description,@active)", new
             {
-                name = service.Nombre,
-                description = service.Descripcion,
-                active = service.Activo
+                name = pService.Nombre,
+                description = pService.Descripcion,
+                active = pService.Activo
             });
 
             return result > 0;
@@ -55,6 +55,15 @@ namespace DataAccess
             {
                 service= "%"+filter+"%"
             });
+        }
+
+        public bool disableService(Service pService, IDbTransaction pTransaction = null)
+        {
+            return dbConn.Execute(@"UPDATE Servicios SET Activo=@active WHERE ServicioID=@id", new
+            {
+                id = pService.ServicioID,
+                active = pService.Activo
+            },pTransaction) > 0 ;
         }
     }
 }

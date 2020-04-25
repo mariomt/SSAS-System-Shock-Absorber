@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cancellation.cs" />
     <Compile Include="Form_Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="mainInformation.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="UsersControls\ProductsControl.cs">
       <SubType>UserControl</SubType>

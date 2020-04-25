@@ -12,9 +12,9 @@ using Entities;
 
 namespace Cliente
 {
-    public partial class ServicesControl : UserControl
+    public partial class ServicesControl : UserControl 
     {
-
+        private Service service = null;
         public ServicesControl()
         {
             InitializeComponent();
@@ -96,5 +96,47 @@ namespace Cliente
         {
             clearTextBox();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (Cancellation cancelar = new Cancellation(EnumTypeOperation.DisableService))
+            {
+                try
+                {
+                    DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
+                    DataGridViewRow row = index[0];
+                    service = new Service()
+                    {
+                        ServicioID = (int)row.Cells[0].Value,
+                        Nombre = row.Cells[1].Value.ToString(),
+                        Descripcion = row.Cells[2].Value.ToString(),
+                        Activo = (bool)row.Cells[3].Value
+                    };
+
+                    var bitacora = cancelar.showDialog(this);
+                    if (bitacora != null)
+                    {
+                        service.Activo = false;
+                        ServiceDomain svd = new ServiceDomain();
+                        svd.disableService(service, bitacora);
+                        Tools.Alert("El Servicio se desactivo con éxito.", Form_Alert.enumType.Success);
+                        loadDataGridView();
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Tools.Alert("No se selecciono nungun registro", Form_Alert.enumType.Error);
+                }
+                catch (ServiceDomainException err)
+                {
+                    Tools.Alert(err.Message, Form_Alert.enumType.Error);
+                }
+            }
+                
+        }
+
+     
+
+
     }
 }

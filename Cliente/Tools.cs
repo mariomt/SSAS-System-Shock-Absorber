@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Cliente
 {
     public class Tools
@@ -13,5 +8,6 @@ namespace Cliente
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
         }
+
     }
 }
