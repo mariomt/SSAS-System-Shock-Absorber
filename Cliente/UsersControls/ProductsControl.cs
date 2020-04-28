@@ -13,10 +13,12 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 
 
+
 namespace Cliente
 {
     public partial class ProductsControl : UserControl
     {
+        Product productoseleccionado;
         IDictionary<string,Regex> validationRegEx;
 
         public ProductsControl()
@@ -205,31 +207,57 @@ namespace Cliente
 
         }
 
-        string IdProductSelected = "";
-        string MotivoCancelacion = "";
+
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
-            DataGridViewRow selectedRow = index[0];
-            IdProductSelected = selectedRow.Cells[0].Value.ToString();
-            InputForm desactive = new InputForm("Motivo de desactivacion");
-            desactive.btnAceptar.Click += new EventHandler(desactivarproducto);
-            desactive.textBox1.TextChanged += new EventHandler(metodo2);
+            try
+            {
+                DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
+                DataGridViewRow selectedRow = index[0];
+                productoseleccionado = new Product();
 
-            desactive.ShowDialog(this);
+                productoseleccionado.ProductoID = (int)selectedRow.Cells[0].Value;
+                productoseleccionado.Descripcion = selectedRow.Cells[1].Value.ToString();
+                productoseleccionado.IVA = double.Parse(selectedRow.Cells[2].Value.ToString());
+                productoseleccionado.Disponibilidad = int.Parse(selectedRow.Cells[3].Value.ToString());
+                productoseleccionado.PrecioVenta = double.Parse(selectedRow.Cells[4].Value.ToString());
+                productoseleccionado.Activo = (bool)selectedRow.Cells[5].Value;
+
+                
+
+
+                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableService);
+
+                BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
+                if (bitacoraOP != null)
+                {
+                    ProductDomain producto = new ProductDomain();
+                    productoseleccionado.Activo = false;
+                    if (producto.bajaproducto(productoseleccionado, bitacoraOP))
+                    {
+                        Tools.Alert("Se dio de baja el producto", Form_Alert.enumType.Success);
+
+                        cargardgv();
+                    }
+                    else
+                    {
+                        Tools.Alert("Error al guardar la informacion", Form_Alert.enumType.Error);
+                    }
+                        
+
+                }
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Tools.Alert("No se selecciono ningun registro",Form_Alert.enumType.Error);
+            }
             
-        }
-        public void metodo2(object sender, EventArgs e)
-        {
-            MotivoCancelacion = ((TextBox)sender).Text;
-        }
 
-        public void desactivarproducto(object sender, EventArgs e)
-        {
-           
-            MessageBox.Show(MotivoCancelacion);
-           
+
+
 
         }
+       
     }
 }

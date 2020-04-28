@@ -61,5 +61,14 @@ namespace DataAccess
             return dbConn.Query<Product>(Queries.searchProductsBydescription,new { product = "%" + parametro + "%"}).ToList();
         }
 
+        public bool bajaproducto(Product bajap, IDbTransaction transaccion)
+        {
+            return dbConn.Execute(Queries.BajaProducto, new {
+                active = bajap.Activo,
+                id = bajap.ProductoID
+                
+            }, transaccion) >0;
+        }
+
     }
 }

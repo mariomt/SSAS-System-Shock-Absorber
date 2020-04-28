@@ -47,9 +47,9 @@
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.Location = new System.Drawing.Point(12, 34);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(35, 13);
+            this.lblMensaje.Size = new System.Drawing.Size(123, 13);
             this.lblMensaje.TabIndex = 1;
-            this.lblMensaje.Text = "label1";
+            this.lblMensaje.Text = "Motivo de desactivacion";
             // 
             // btnCancelar
             // 
@@ -92,7 +92,8 @@
             this.Name = "InputForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InputForm";
+            this.Text = "Motivo";
+            this.Load += new System.EventHandler(this.InputForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
