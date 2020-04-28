@@ -26,14 +26,18 @@ namespace DataAccess
         public const string searchProductsBydescription = @"SELECT ProductoID,Descripcion,PrecioVenta,Disponibilidad,IVA,Activo FROM Productos where Descripcion LIKE @product";
         #endregion
 
+
         #region Servicios
         // Escribe las consultas de Servicios quí...
         public const string selectAllServices = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios";
         public const string selectServicesByName = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios WHERE Nombre LIKE @service";
+        public const string disablService = @"UPDATE Servicios SET Activo=@active WHERE ServicioID=@id";
+        public const string insertService = @"INSERT INTO Servicios(Nombre, Descripcion, Activo) VALUES(@name,@description,@active)";
         #endregion
 
         #region Ventas
         // Escribe las consultas de ventas aquí...
+
 
         #endregion
     }

@@ -35,7 +35,7 @@ namespace DataAccess
 
         public bool insertNewService(Service pService)
         {
-            var result = dbConn.Execute(@"INSERT INTO Servicios(Nombre, Descripcion, Activo) VALUES(@name,@description,@active)", new
+            var result = dbConn.Execute(Queries.insertService, new
             {
                 name = pService.Nombre,
                 description = pService.Descripcion,
@@ -57,9 +57,10 @@ namespace DataAccess
             });
         }
 
+
         public bool disableService(Service pService, IDbTransaction pTransaction = null)
         {
-            return dbConn.Execute(@"UPDATE Servicios SET Activo=@active WHERE ServicioID=@id", new
+            return dbConn.Execute(Queries.disablService, new
             {
                 id = pService.ServicioID,
                 active = pService.Activo
