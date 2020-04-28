@@ -41,11 +41,17 @@ namespace Domain
                     {
                         result = new BitacoraOperacionesDAO(connection).Save(pBitacoraOp, transaction);
                         if (result)
+                        {
                             result = service.disableService(pService, transaction);
-                        if (result)
-                            transaction.Commit();
+                            if (result)
+                                transaction.Commit();
+                            else
+                                transaction.Rollback();
+                        }
                         else
+                        {
                             transaction.Rollback();
+                        }
                     } catch (SqlException)
                     {
                         transaction.Rollback();
