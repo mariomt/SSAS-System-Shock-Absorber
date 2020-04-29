@@ -31,6 +31,7 @@
             this.labelClose = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
+            this.batchesBtn = new FontAwesome.Sharp.IconButton();
             this.servicesBtn = new FontAwesome.Sharp.IconButton();
             this.productsBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -86,6 +87,7 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
+            this.panelMenuContent.Controls.Add(this.batchesBtn);
             this.panelMenuContent.Controls.Add(this.servicesBtn);
             this.panelMenuContent.Controls.Add(this.productsBtn);
             this.panelMenuContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,6 +95,32 @@
             this.panelMenuContent.Name = "panelMenuContent";
             this.panelMenuContent.Size = new System.Drawing.Size(205, 491);
             this.panelMenuContent.TabIndex = 1;
+            // 
+            // batchesBtn
+            // 
+            this.batchesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.batchesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.batchesBtn.FlatAppearance.BorderSize = 0;
+            this.batchesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.batchesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.batchesBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.batchesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.batchesBtn.ForeColor = System.Drawing.Color.White;
+            this.batchesBtn.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.batchesBtn.IconColor = System.Drawing.Color.White;
+            this.batchesBtn.IconSize = 24;
+            this.batchesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.batchesBtn.Location = new System.Drawing.Point(0, 136);
+            this.batchesBtn.Name = "batchesBtn";
+            this.batchesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.batchesBtn.Rotation = 0D;
+            this.batchesBtn.Size = new System.Drawing.Size(205, 68);
+            this.batchesBtn.TabIndex = 3;
+            this.batchesBtn.Text = "Gestión de Lotes";
+            this.batchesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.batchesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.batchesBtn.UseVisualStyleBackColor = true;
+            this.batchesBtn.Click += new System.EventHandler(this.batchesBtn_Click);
             // 
             // servicesBtn
             // 
@@ -368,5 +396,6 @@
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton productsBtn;
         private FontAwesome.Sharp.IconButton servicesBtn;
+        private FontAwesome.Sharp.IconButton batchesBtn;
     }
 }

@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="mainInformation.cs" />
     <Compile Include="Tools.cs" />
+    <Compile Include="UsersControls\BatchesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersControls\BatchesControl.Designer.cs">
+      <DependentUpon>BatchesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\ProductsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersControls\BatchesControl.resx">
+      <DependentUpon>BatchesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersControls\ProductsControl.resx">
       <DependentUpon>ProductsControl.cs</DependentUpon>

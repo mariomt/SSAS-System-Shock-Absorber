@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Cliente.UsersControls;
+using Entities;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -105,6 +106,11 @@ namespace Cliente
         private void servicesBtn_Click(object sender, EventArgs e)
         {
             openControl(new ServicesControl());
+        }
+
+        private void batchesBtn_Click(object sender, EventArgs e)
+        {
+            openControl(new BatchesControl());
         }
     }
 }

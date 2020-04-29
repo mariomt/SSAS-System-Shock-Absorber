@@ -41,5 +41,10 @@ namespace DataAccess
 
 
         #endregion
+
+        #region Lotes
+        // Escribe las consultas de Lotes aquí...
+        public const string insertBatch = @"INSERT INTO LoteProducto(ProductoID,FechaHora,Importe,Cantidad,Activo) VALUES(@ProductoID,@FechaHora,@Importe,@Cantidad,@Activo)"
+        #endregion
     }
 }
