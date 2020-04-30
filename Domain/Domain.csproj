@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchDomain.cs" />
     <Compile Include="BitacoraOperacionesDomain.cs" />
     <Compile Include="Enums\EnumTypeOperation.cs" />
     <Compile Include="ProductDomain.cs" />

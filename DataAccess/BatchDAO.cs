@@ -1,16 +1,15 @@
 ﻿using Dapper;
 using Entities;
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DataAccess
 {
-    public class BatchDAO: DataAccessObjectBase
+    public class BatchDAO : DataAccessObjectBase
     {
         #region Constructores
         public BatchDAO(IDbConnection pCon)
@@ -30,6 +29,19 @@ namespace DataAccess
             {
                 return this.dbConn;
             }
+        }
+        public void insertBatch(Batch batch)
+        {
+            dbConn.Execute(Queries.insertBatch,
+                new 
+                {
+                        ProductoID = batch.ProductoID,
+                        FechaHora = batch.FechaHora,
+                        Importe = batch.Importe,
+                        Cantidad = batch.Cantidad,
+                        Activo = batch.Activo
+                }
+            );
         }
     }
 }

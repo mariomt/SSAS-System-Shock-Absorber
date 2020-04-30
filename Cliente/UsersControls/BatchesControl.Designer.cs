@@ -30,15 +30,15 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.productoLbl = new System.Windows.Forms.Label();
+            this.ProductoCb = new System.Windows.Forms.ComboBox();
             this.importeLbl = new System.Windows.Forms.Label();
-            this.disponibilidadTxt = new System.Windows.Forms.TextBox();
+            this.importeTxt = new System.Windows.Forms.TextBox();
             this.Cantidadlbl = new System.Windows.Forms.Label();
             this.cantidadTxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.activoChk = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ProductoCb = new System.Windows.Forms.ComboBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.agregarBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,12 +51,12 @@
             this.flowLayoutPanel1.Controls.Add(this.productoLbl);
             this.flowLayoutPanel1.Controls.Add(this.ProductoCb);
             this.flowLayoutPanel1.Controls.Add(this.importeLbl);
-            this.flowLayoutPanel1.Controls.Add(this.disponibilidadTxt);
+            this.flowLayoutPanel1.Controls.Add(this.importeTxt);
             this.flowLayoutPanel1.Controls.Add(this.Cantidadlbl);
             this.flowLayoutPanel1.Controls.Add(this.cantidadTxt);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.cancelBtn);
+            this.flowLayoutPanel1.Controls.Add(this.agregarBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 135);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
@@ -74,6 +74,14 @@
             this.productoLbl.TabIndex = 0;
             this.productoLbl.Text = "Producto:";
             // 
+            // ProductoCb
+            // 
+            this.ProductoCb.FormattingEnabled = true;
+            this.ProductoCb.Location = new System.Drawing.Point(13, 33);
+            this.ProductoCb.Name = "ProductoCb";
+            this.ProductoCb.Size = new System.Drawing.Size(293, 21);
+            this.ProductoCb.TabIndex = 13;
+            // 
             // importeLbl
             // 
             this.importeLbl.AutoSize = true;
@@ -84,13 +92,13 @@
             this.importeLbl.TabIndex = 4;
             this.importeLbl.Text = "Importe:";
             // 
-            // disponibilidadTxt
+            // importeTxt
             // 
-            this.disponibilidadTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disponibilidadTxt.Location = new System.Drawing.Point(13, 80);
-            this.disponibilidadTxt.Name = "disponibilidadTxt";
-            this.disponibilidadTxt.Size = new System.Drawing.Size(293, 22);
-            this.disponibilidadTxt.TabIndex = 5;
+            this.importeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importeTxt.Location = new System.Drawing.Point(13, 80);
+            this.importeTxt.Name = "importeTxt";
+            this.importeTxt.Size = new System.Drawing.Size(293, 22);
+            this.importeTxt.TabIndex = 5;
             // 
             // Cantidadlbl
             // 
@@ -130,44 +138,38 @@
             this.activoChk.Text = "Activo";
             this.activoChk.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cancelBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(13, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cancelBtn.BackColor = System.Drawing.Color.Orange;
+            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cancelBtn.FlatAppearance.BorderSize = 0;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.cancelBtn.Location = new System.Drawing.Point(13, 208);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(143, 32);
+            this.cancelBtn.TabIndex = 11;
+            this.cancelBtn.Text = "Cancelar";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // button1
+            // agregarBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(162, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // ProductoCb
-            // 
-            this.ProductoCb.FormattingEnabled = true;
-            this.ProductoCb.Location = new System.Drawing.Point(13, 33);
-            this.ProductoCb.Name = "ProductoCb";
-            this.ProductoCb.Size = new System.Drawing.Size(293, 21);
-            this.ProductoCb.TabIndex = 13;
+            this.agregarBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.agregarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.agregarBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.agregarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.agregarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregarBtn.ForeColor = System.Drawing.Color.White;
+            this.agregarBtn.Location = new System.Drawing.Point(162, 208);
+            this.agregarBtn.Name = "agregarBtn";
+            this.agregarBtn.Size = new System.Drawing.Size(143, 32);
+            this.agregarBtn.TabIndex = 11;
+            this.agregarBtn.Text = "Agregar";
+            this.agregarBtn.UseVisualStyleBackColor = false;
+            this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
             // 
             // BatchesControl
             // 
@@ -189,13 +191,13 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label productoLbl;
         private System.Windows.Forms.Label importeLbl;
-        private System.Windows.Forms.TextBox disponibilidadTxt;
+        private System.Windows.Forms.TextBox importeTxt;
         private System.Windows.Forms.Label Cantidadlbl;
         private System.Windows.Forms.TextBox cantidadTxt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox activoChk;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button agregarBtn;
         private System.Windows.Forms.ComboBox ProductoCb;
     }
 }

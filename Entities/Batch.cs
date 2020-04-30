@@ -11,7 +11,7 @@ namespace Entities
         public int LoteID { get; set; }
         public int ProductoID { get; set; }
         public DateTime FechaHora { get; set; }
-        public Double Importe { get; set; }
+        public double Importe { get; set; }
         public int Cantidad { get; set; }
         public bool Activo { get; set; }
     }

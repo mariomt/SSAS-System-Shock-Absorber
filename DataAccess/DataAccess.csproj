@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchDAO.cs" />
     <Compile Include="BitacoraOperacionesDAO.cs" />
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DataAccessObjectBase.cs" />
