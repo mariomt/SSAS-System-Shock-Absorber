@@ -59,7 +59,7 @@ namespace DataAccess
                     Nombre = user.Nombre,
                     ApellidoPaterno = user.ApellidoPaterno,
                     ApellidoMaterno = user.ApellidoMaterno,
-                    RolID = 1,
+                    RolID = user.rol.RolId,
                     Activo = user.Activo
                 }
             );

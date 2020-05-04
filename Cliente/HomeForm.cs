@@ -65,7 +65,7 @@ namespace Cliente
         }
 
 
-        private void openControl(UserControl control)
+        private void openControl(UserControl control, string headerTitle = "Inicio")
         {
             
             if(activeControl != null)
@@ -83,11 +83,12 @@ namespace Cliente
             control.AutoScroll = true;
             activeControl = control;
             this.panelDesktop.Controls.Add(activeControl);
+            this.lblHeaderTitle.Text = headerTitle;
             activeControl.Show();
         }
         private void productsBtn_Click(object sender, System.EventArgs e)
         {
-            openControl(new ProductsControl());
+            openControl(new ProductsControl(),"Gestión de productos");
         }
 
         private void iconPictureBox3_Click(object sender, System.EventArgs e)
@@ -105,17 +106,17 @@ namespace Cliente
 
         private void servicesBtn_Click(object sender, EventArgs e)
         {
-            openControl(new ServicesControl());
+            openControl(new ServicesControl(),"Gestión de servicios");
         }
 
         private void batchesBtn_Click(object sender, EventArgs e)
         {
-            openControl(new BatchesControl());
+            openControl(new BatchesControl(), "Gestión de lotes");
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            openControl(new ControlUsuarios());
+            openControl(new ControlUsuarios(), "Gestión de usuarios");
         }
     }
 }
