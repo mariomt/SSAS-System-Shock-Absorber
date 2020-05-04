@@ -112,5 +112,10 @@ namespace Cliente
         {
             openControl(new BatchesControl());
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            openControl(new ControlUsuarios());
+        }
     }
 }

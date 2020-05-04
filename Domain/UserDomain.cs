@@ -30,6 +30,11 @@ namespace Domain
             }
             return false;
         }
+        public void insertNewUser(ref User user)
+        {
+            new UserDAO().insertUser(user);
+
+        }
 
     }
 }

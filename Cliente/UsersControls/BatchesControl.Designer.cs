@@ -62,6 +62,7 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 314);
             this.flowLayoutPanel1.TabIndex = 11;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // productoLbl
             // 
@@ -81,6 +82,7 @@
             this.ProductoCb.Name = "ProductoCb";
             this.ProductoCb.Size = new System.Drawing.Size(293, 21);
             this.ProductoCb.TabIndex = 13;
+            this.ProductoCb.SelectedIndexChanged += new System.EventHandler(this.ProductoCb_SelectedIndexChanged);
             // 
             // importeLbl
             // 
@@ -178,6 +180,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "BatchesControl";
             this.Size = new System.Drawing.Size(819, 491);
+            this.Load += new System.EventHandler(this.BatchesControl_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

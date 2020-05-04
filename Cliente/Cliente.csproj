@@ -82,6 +82,12 @@
     <Compile Include="UsersControls\BatchesControl.Designer.cs">
       <DependentUpon>BatchesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersControls\ControlUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersControls\ControlUsuarios.Designer.cs">
+      <DependentUpon>ControlUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersControls\ProductsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsersControls\BatchesControl.resx">
       <DependentUpon>BatchesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersControls\ControlUsuarios.resx">
+      <DependentUpon>ControlUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersControls\ProductsControl.resx">
       <DependentUpon>ProductsControl.cs</DependentUpon>

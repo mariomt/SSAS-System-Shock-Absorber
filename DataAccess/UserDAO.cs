@@ -48,5 +48,25 @@ namespace DataAccess
 
             return result;
         }
+        public void insertUser(User user)
+        {
+            //@NombreUsuario,@Contrasena,@Nombre,@ApellidoPaterno,@ApellidoMaterno,@RolID,@Activo
+            dbConn.Execute(Queries.insertNewUser,
+                new
+                {
+                    NombreUsuario = user.NombreUsuario,
+                    Contrasena = user.Contrasena,
+                    Nombre = user.Nombre,
+                    ApellidoPaterno = user.ApellidoPaterno,
+                    ApellidoMaterno = user.ApellidoMaterno,
+                    RolID = 1,
+                    Activo = user.Activo
+                }
+            );
+
+
+
+
+        }
     }
 }

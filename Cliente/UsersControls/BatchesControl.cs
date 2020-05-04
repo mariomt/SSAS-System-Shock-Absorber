@@ -82,5 +82,20 @@ namespace Cliente.UsersControls
         {
             cleanForm();
         }
+
+        private void ProductoCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BatchesControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

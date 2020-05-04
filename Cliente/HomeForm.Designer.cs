@@ -48,6 +48,7 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -87,6 +88,7 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
+            this.panelMenuContent.Controls.Add(this.iconButton1);
             this.panelMenuContent.Controls.Add(this.batchesBtn);
             this.panelMenuContent.Controls.Add(this.servicesBtn);
             this.panelMenuContent.Controls.Add(this.productsBtn);
@@ -344,6 +346,32 @@
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Child;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconSize = 24;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.Location = new System.Drawing.Point(0, 204);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(205, 68);
+            this.iconButton1.TabIndex = 4;
+            this.iconButton1.Text = "Gestión de Usuarios";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -397,5 +425,6 @@
         private FontAwesome.Sharp.IconButton productsBtn;
         private FontAwesome.Sharp.IconButton servicesBtn;
         private FontAwesome.Sharp.IconButton batchesBtn;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
