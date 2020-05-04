@@ -11,5 +11,9 @@ namespace Entities
         public int RolId { get; set; }
         public string Descripcion { get; set; }
 
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }
