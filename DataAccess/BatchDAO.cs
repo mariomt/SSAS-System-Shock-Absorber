@@ -30,9 +30,9 @@ namespace DataAccess
                 return this.dbConn;
             }
         }
-        public void insertBatch(Batch batch)
+        public bool insertBatch(Batch batch, IDbTransaction pTransaction = null)
         {
-            dbConn.Execute(Queries.insertBatch,
+            return dbConn.Execute(Queries.insertBatch,
                 new 
                 {
                         ProductoID = batch.ProductoID,
@@ -40,8 +40,8 @@ namespace DataAccess
                         Importe = batch.Importe,
                         Cantidad = batch.Cantidad,
                         Activo = batch.Activo
-                }
-            );
+                }, pTransaction
+            ) > 0;
         }
     }
 }
