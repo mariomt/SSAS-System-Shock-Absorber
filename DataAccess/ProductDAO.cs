@@ -44,9 +44,6 @@ namespace DataAccess
                 }
             );
 
-          
-
-
         }
 
         public IEnumerable<Product> getProdcts()
@@ -83,5 +80,20 @@ namespace DataAccess
             }, pTransaction) > 0;
         }
 
+        /// <summary>
+        /// Actualiza la cantidad disponible del producto especificado.
+        /// </summary>
+        /// <param name="productoID">Valor entero que representa el identificador del producto</param>
+        /// <param name="cantidad">Valor entero que se le sumara o restará al producto dependiendo de su signo</param>
+        /// <param name="pTransaction">Si se le pasa una transacción la consulta formara parte de ella y no se verá reflejada hasta que la transacción se complete.</param>
+        /// <returns>Regresa true si se modifica al menos un registro y false si no se modifica ningún registro.</returns>
+        public bool updateDisponibilidad(int productoID, int cantidad, IDbTransaction pTransaction = null)
+        {
+            return dbConn.Execute(@"UPDATE Productos SET Disponibilidad=Disponibilidad+@disp WHERE ProductoID=@id", new
+            {
+                id = productoID,
+                disp = cantidad
+            }, pTransaction) > 0;
+        }
     }
 }
