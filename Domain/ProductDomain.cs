@@ -74,5 +74,18 @@ namespace Domain
             }
             return result;
         }
+
+        /// <summary>
+        /// Método para actualizar la información de un producto.
+        /// </summary>
+        /// <param name="pProduct"></param>
+        /// <returns>Regresa true si se modificó almenos un registro, y false si no se modificó ningún registro</returns>
+        public bool updateProduct(Product pProduct)
+        {
+            if (pProduct.ProductoID == 0)
+                throw new Exception("El producto no contiene un identificador");
+
+            return new ProductDAO().updateProduct(pProduct);
+        }
     }
 }
