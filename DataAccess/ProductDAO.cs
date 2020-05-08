@@ -70,5 +70,18 @@ namespace DataAccess
             }, transaccion) >0;
         }
 
+        public bool updateProduct(Product pProduct, IDbTransaction pTransaction = null)
+        {
+            return dbConn.Execute(Queries.updateProduct, new 
+            {
+                prodID = pProduct.ProductoID,
+                desc = pProduct.Descripcion,
+                pVenta= pProduct.PrecioVenta,
+                disp = pProduct.Disponibilidad,
+                iva = pProduct.IVA,
+                act = pProduct.Activo
+            }, pTransaction) > 0;
+        }
+
     }
 }

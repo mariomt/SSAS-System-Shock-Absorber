@@ -27,6 +27,7 @@ namespace DataAccess
         public const string selectAllProduct = @"SELECT ProductoID,Descripcion,PrecioVenta, Disponibilidad,IVA,Activo FROM Productos";
         public const string searchProductsBydescription = @"SELECT ProductoID,Descripcion,PrecioVenta,Disponibilidad,IVA,Activo FROM Productos where Descripcion LIKE @product";
         public const string  BajaProducto = @"UPDATE Productos SET Activo=@active WHERE ProductoID=@id";
+        public const string updateProduct = @"UPDATE Productos SET Descripcion=@desc, PrecioVenta=@pVenta, Disponibilidad=@disp, IVA=@iva, Activo=@act WHERE ProductoID=@prodID";
         #endregion
 
 
