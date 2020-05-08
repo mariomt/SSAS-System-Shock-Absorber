@@ -12,9 +12,47 @@ namespace Domain
 {
     public class BatchDomain
     {
-        public void insertBatch(ref Batch batch)
+        public bool insertBatch(ref Batch batch)
         {
-            new BatchDAO().insertBatch(batch);
+            bool result = false;
+            using( BatchDAO batchDao = new BatchDAO())
+            {
+                using (var connection = batchDao.Connection)
+                {
+                    connection.Open();
+                    var transaction = connection.BeginTransaction();
+                    try
+                    {
+                        result = new ProductDAO(connection).updateDisponibilidad(batch.ProductoID, batch.Cantidad, transaction);
+                        if (result)
+                        {
+                            if (batchDao.insertBatch(batch,transaction))
+                            {
+                                transaction.Commit();
+                                result = true;
+                            }
+                            else
+                                throw new Exception("Error al guardar el lote de producto.");
+                        }
+                        else
+                        {
+                            throw new Exception("Error al actualizar la disponibilidad.");
+                        }
+                    }
+                    catch (SqlException)
+                    {
+                        transaction.Rollback();
+                        result = false;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+
+            return result;
+
         }
 
         public string validateFormInsertBatch(int ProductID,string Importe,string cantidad)
