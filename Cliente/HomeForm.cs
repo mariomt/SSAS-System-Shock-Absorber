@@ -118,5 +118,16 @@ namespace Cliente
         {
             openControl(new ControlUsuarios(), "Gestión de usuarios");
         }
+
+        private void salesBtn_Click(object sender, EventArgs e)
+        {
+            openControl(new SalesControl(), "Registro de ventas");
+            ((SalesControl)this.activeControl).txtSearch.Focus();
+        }
+
+        private void hourTimer_Tick(object sender, EventArgs e)
+        {
+            lblHour.Text = DateTime.Now.ToShortTimeString();
+        }
     }
 }

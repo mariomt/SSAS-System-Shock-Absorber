@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelClose = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
@@ -35,6 +36,7 @@
             this.batchesBtn = new FontAwesome.Sharp.IconButton();
             this.servicesBtn = new FontAwesome.Sharp.IconButton();
             this.productsBtn = new FontAwesome.Sharp.IconButton();
+            this.salesBtn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -49,6 +51,9 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -92,6 +97,7 @@
             this.panelMenuContent.Controls.Add(this.batchesBtn);
             this.panelMenuContent.Controls.Add(this.servicesBtn);
             this.panelMenuContent.Controls.Add(this.productsBtn);
+            this.panelMenuContent.Controls.Add(this.salesBtn);
             this.panelMenuContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuContent.Location = new System.Drawing.Point(0, 89);
             this.panelMenuContent.Name = "panelMenuContent";
@@ -112,7 +118,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconSize = 24;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(0, 204);
+            this.iconButton1.Location = new System.Drawing.Point(0, 263);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.iconButton1.Rotation = 0D;
@@ -138,7 +144,7 @@
             this.batchesBtn.IconColor = System.Drawing.Color.White;
             this.batchesBtn.IconSize = 24;
             this.batchesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.batchesBtn.Location = new System.Drawing.Point(0, 136);
+            this.batchesBtn.Location = new System.Drawing.Point(0, 195);
             this.batchesBtn.Name = "batchesBtn";
             this.batchesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.batchesBtn.Rotation = 0D;
@@ -164,7 +170,7 @@
             this.servicesBtn.IconColor = System.Drawing.Color.White;
             this.servicesBtn.IconSize = 24;
             this.servicesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.servicesBtn.Location = new System.Drawing.Point(0, 68);
+            this.servicesBtn.Location = new System.Drawing.Point(0, 127);
             this.servicesBtn.Name = "servicesBtn";
             this.servicesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.servicesBtn.Rotation = 0D;
@@ -190,17 +196,42 @@
             this.productsBtn.IconColor = System.Drawing.Color.White;
             this.productsBtn.IconSize = 24;
             this.productsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.productsBtn.Location = new System.Drawing.Point(0, 0);
+            this.productsBtn.Location = new System.Drawing.Point(0, 59);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.productsBtn.Rotation = 0D;
             this.productsBtn.Size = new System.Drawing.Size(205, 68);
-            this.productsBtn.TabIndex = 1;
+            this.productsBtn.TabIndex = 5;
             this.productsBtn.Text = "Gestión de Producto";
             this.productsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.productsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.productsBtn.UseVisualStyleBackColor = true;
             this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
+            // 
+            // salesBtn
+            // 
+            this.salesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.salesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.salesBtn.FlatAppearance.BorderSize = 0;
+            this.salesBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.salesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salesBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.salesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesBtn.ForeColor = System.Drawing.Color.White;
+            this.salesBtn.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            this.salesBtn.IconColor = System.Drawing.Color.White;
+            this.salesBtn.IconSize = 24;
+            this.salesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.salesBtn.Location = new System.Drawing.Point(0, 0);
+            this.salesBtn.Name = "salesBtn";
+            this.salesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.salesBtn.Rotation = 0D;
+            this.salesBtn.Size = new System.Drawing.Size(205, 59);
+            this.salesBtn.TabIndex = 1;
+            this.salesBtn.Text = "Registro de Venta";
+            this.salesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.salesBtn.UseVisualStyleBackColor = true;
+            this.salesBtn.Click += new System.EventHandler(this.salesBtn_Click);
             // 
             // panelLogo
             // 
@@ -239,6 +270,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(62)))), ((int)(((byte)(108)))));
+            this.panel2.Controls.Add(this.lblHour);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblRol);
             this.panel2.Controls.Add(this.lblUserName);
             this.panel2.Controls.Add(this.label4);
@@ -372,6 +405,34 @@
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Hora:";
+            // 
+            // lblHour
+            // 
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHour.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblHour.Location = new System.Drawing.Point(54, 54);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(73, 16);
+            this.lblHour.TabIndex = 10;
+            this.lblHour.Text = "00:00 p.m";
+            // 
+            // hourTimer
+            // 
+            this.hourTimer.Enabled = true;
+            this.hourTimer.Interval = 1000;
+            this.hourTimer.Tick += new System.EventHandler(this.hourTimer_Tick);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -426,5 +487,9 @@
         private FontAwesome.Sharp.IconButton servicesBtn;
         private FontAwesome.Sharp.IconButton batchesBtn;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton salesBtn;
+        private System.Windows.Forms.Label lblHour;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer hourTimer;
     }
 }
