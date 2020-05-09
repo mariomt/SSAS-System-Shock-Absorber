@@ -129,5 +129,10 @@ namespace Cliente
         {
             lblHour.Text = DateTime.Now.ToShortTimeString();
         }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

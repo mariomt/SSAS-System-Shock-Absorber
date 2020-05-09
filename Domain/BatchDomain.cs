@@ -77,5 +77,12 @@ namespace Domain
             }
             return "";
         }
+        public IEnumerable<Batch> getBatch()
+        {
+
+            return new BatchDAO().getBatch();
+
+        }
+
     }
 }

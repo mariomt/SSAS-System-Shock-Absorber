@@ -33,15 +33,26 @@ namespace DataAccess
         public bool insertBatch(Batch batch, IDbTransaction pTransaction = null)
         {
             return dbConn.Execute(Queries.insertBatch,
-                new 
+                new
                 {
-                        ProductoID = batch.ProductoID,
-                        FechaHora = batch.FechaHora,
-                        Importe = batch.Importe,
-                        Cantidad = batch.Cantidad,
-                        Activo = batch.Activo
+                    ProductoID = batch.ProductoID,
+                    FechaHora = batch.FechaHora,
+                    Importe = batch.Importe,
+                    Cantidad = batch.Cantidad,
+                    Activo = batch.Activo
                 }, pTransaction
             ) > 0;
         }
+
+        public IEnumerable<Batch> getBatch()
+        {
+            return dbConn.Query<Batch>(Queries.selectAllbatch).ToList();
+
+
+        }
     }
-}
+
+ } 
+
+
+
