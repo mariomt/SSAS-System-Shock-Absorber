@@ -56,6 +56,10 @@ namespace Domain
             return result;
 
         }
+        public IEnumerable<Batch> SearchLotes(string parametro)
+        {
+            return new BatchDAO().SearchLotes(parametro);
+        }
 
         public string validateFormInsertBatch(int ProductID,string Importe,string cantidad)
         {
