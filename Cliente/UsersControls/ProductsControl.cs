@@ -24,11 +24,11 @@ namespace Cliente
         public ProductsControl()
         {
             InitializeComponent();
-            this.InicializarRegEx();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string validacion = ValidacionFinalDeTextBox();
+            ProductDomain productDomain = new ProductDomain();
+            string validacion = productDomain.validateFormProduct(descripcionTxt.Text,IVATxt.Text,disponibilidadTxt.Text,precioTxt.Text);
             if (validacion.Length == 0)
             {
                 Product producto = new Product()
@@ -46,12 +46,7 @@ namespace Cliente
             }
             else
             {
-                Dictionary<string,string> ValoresDeLosTextos = new Dictionary<string, string>();
-                ValoresDeLosTextos.Add("Descripción",descripcionTxt.Text);
-                ValoresDeLosTextos.Add("IVA", IVATxt.Text);
-                ValoresDeLosTextos.Add("Precio", precioTxt.Text);
-                ValoresDeLosTextos.Add("Disponibilidad", disponibilidadTxt.Text);
-                Tools.Alert($"Valor invalido en el campo '{validacion}'.\n Valor:{ValoresDeLosTextos[validacion]}", Form_Alert.enumType.Error);
+                Tools.Alert(validacion, Form_Alert.enumType.Error);
             }
         
             this.cleanForm();
@@ -67,81 +62,6 @@ namespace Cliente
             IVATxt.Text = "";
             activoChk.Checked = false;
         }
-        #region validaciones
-        private void InicializarRegEx()
-        {
-            this.validationRegEx = new Dictionary<string, Regex>();
-            //Regex para el campo de descripción solo acepta numeros, guión y letras con acentos y diéresis
-            this.validationRegEx["regDescripcion"] = new Regex(@"^[\wñÑÁ-ÿ]{1}$|(NumPad[\d])|(D[\d])|(Space)|(Back)|(-)$");
-            this.validationRegEx["regDescripcionNoShift"] = new Regex(@"^[\wñÑÁ-ÿ]{1}$|(NumPad[\d])|(Space)|(Back)|(-)$");//prevenimos los caracteres especiales con shift
-            this.validationRegEx["regDescripcionesFinal"] = new Regex(@"^[\wÁ-ÿ\s]*$");
-            //Regex para el campo de IVA y Precio solo acepta digitos ya sea de del numpad o del principal incluyendo el punto
-            this.validationRegEx["regIVA_PrecioVenta"] = new Regex(@"(NumPad[\d])|(D[\d])|(\.)|(Back)|(Decimal)$");
-            this.validationRegEx["regIVA_PrecioVentaNoShift"] = new Regex(@"(NumPad[\d])|(\.)|(Back)|(Decimal)$");//prevenimos los caracteres especiales con shift
-            this.validationRegEx["regIVA_PrecioFinal"] = new Regex(@"^[\d\.]*$");
-            //Regex para el campo de disponibilidad solo acepta digitos del numpad y el teclado original
-            this.validationRegEx["regDisponibilidad"] = new Regex(@"(NumPad[\d])|(D[\d])|(Back)$");
-            this.validationRegEx["regDisponibilidadNoShift"] = new Regex(@"(NumPad[\d])|(Back)$");//prevenimos los caracteres especiales con shift
-            this.validationRegEx["regDisponibilidadFinal"] = new Regex(@"^[\d]*$");
-
-        }
-
-        private void descripcionTxt_KeyDown(object sender,KeyEventArgs e)
-        {
-            e.SuppressKeyPress = this.validarTextBox(e, this.validationRegEx["regDescripcion"], this.validationRegEx["regDescripcionNoShift"]);
-        }
-
-        private void IVATxt_KeyDown(object sender,KeyEventArgs e)
-        {
-            e.SuppressKeyPress = this.validarTextBox(e, this.validationRegEx["regIVA_PrecioVenta"], this.validationRegEx["regIVA_PrecioVentaNoShift"]);
-        }
-
-        private void precioTxt_KeyDown(object sender,KeyEventArgs e)
-        {
-            e.SuppressKeyPress = this.validarTextBox(e, this.validationRegEx["regIVA_PrecioVenta"], this.validationRegEx["regIVA_PrecioVentaNoShift"]);
-        }
-
-        private void disponibilidadTxt_KeyDown(object sender, KeyEventArgs e)
-        {
-            e.SuppressKeyPress = this.validarTextBox(e, this.validationRegEx["regDisponibilidad"], this.validationRegEx["regDisponibilidadNoShift"]);
-        }
-
-        private Boolean validarTextBox(KeyEventArgs e,Regex reg,Regex regNoShift)
-        {
-            string tecla = e.KeyCode.ToString();
-            Match match;
-            if (e.Shift)
-            {
-                match = regNoShift.Match(tecla);//usamos el Regex que excluye el shift
-            }
-            else
-            {
-                match = reg.Match(tecla);//usamos el Regex que acepta el shift
-            }
-            return !match.Success;//valor "false" deja pasar el el teclado, valor "true" no deja pasar el teclado
-        }
-
-        private string ValidacionFinalDeTextBox()
-        {
-            if (!this.validationRegEx["regDescripcionesFinal"].Match(descripcionTxt.Text).Success)
-            {
-                return "Descripción";
-            }
-            if (!this.validationRegEx["regIVA_PrecioFinal"].Match(IVATxt.Text).Success)
-            {
-                return "IVA";
-            }
-            if (!this.validationRegEx["regIVA_PrecioFinal"].Match(precioTxt.Text).Success)
-            {
-                return "Precio";
-            }
-            if (!this.validationRegEx["regDisponibilidadFinal"].Match(disponibilidadTxt.Text).Success)
-            {
-                return "Disponibilidad";
-            }
-            return "";
-        }
-        #endregion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {

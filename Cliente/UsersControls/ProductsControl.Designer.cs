@@ -79,7 +79,6 @@
             this.descripcionTxt.Size = new System.Drawing.Size(293, 22);
             this.descripcionTxt.TabIndex = 1;
             this.descripcionTxt.TextChanged += new System.EventHandler(this.descripcionTxt_TextChanged);
-            this.descripcionTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descripcionTxt_KeyDown);
             // 
             // precioTxt
             // 
@@ -88,7 +87,6 @@
             this.precioTxt.Name = "precioTxt";
             this.precioTxt.Size = new System.Drawing.Size(293, 22);
             this.precioTxt.TabIndex = 3;
-            this.precioTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.precioTxt_KeyDown);
             // 
             // preciolbl
             // 
@@ -108,7 +106,6 @@
             this.disponibilidadTxt.Size = new System.Drawing.Size(293, 22);
             this.disponibilidadTxt.TabIndex = 5;
             this.disponibilidadTxt.TextChanged += new System.EventHandler(this.disponibilidadTxt_TextChanged);
-            this.disponibilidadTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.disponibilidadTxt_KeyDown);
             // 
             // disponibilidadLbl
             // 
@@ -127,7 +124,6 @@
             this.IVATxt.Name = "IVATxt";
             this.IVATxt.Size = new System.Drawing.Size(293, 22);
             this.IVATxt.TabIndex = 7;
-            this.IVATxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IVATxt_KeyDown);
             // 
             // IVALbl
             // 
