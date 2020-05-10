@@ -50,6 +50,8 @@ namespace DataAccess
         public const string insertBatch = @"INSERT INTO LoteProducto(ProductoID,FechaHora,Importe,Cantidad,Activo) VALUES(@ProductoID,@FechaHora,@Importe,@Cantidad,@Activo)";
         public const string selectAllbatch = @"SELECT LoteID,ProductoID,FechaHora, Cantidad,Activo FROM  LoteProducto";
         public const string bajalote = @"UPDATE LoteProducto SET Activo=@active WHERE LoteID=@id";
+        public const string searchLotesBydescription = @"SELECT LoteID,ProductoID,FechaHora,Importe,Cantidad,Activo FROM LoteProducto where LoteID LIKE @lote";
+
         #endregion
 
         #region

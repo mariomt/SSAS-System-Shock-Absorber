@@ -43,6 +43,12 @@ namespace DataAccess
                 }, pTransaction
             ) > 0;
         }
+        public IEnumerable<Batch> SearchLotes(string parametro)
+        {
+
+            return dbConn.Query<Batch>(Queries.searchLotesBydescription, new { lote = "%" + parametro + "%" }).ToList();
+        }
+
 
         public IEnumerable<Batch> getBatch()
         {

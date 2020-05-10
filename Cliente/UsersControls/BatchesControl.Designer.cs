@@ -48,6 +48,7 @@
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBatches)).BeginInit();
@@ -209,10 +210,10 @@
             this.btnDesactive.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDesactive.IconColor = System.Drawing.Color.Black;
             this.btnDesactive.IconSize = 16;
-            this.btnDesactive.Location = new System.Drawing.Point(679, 96);
+            this.btnDesactive.Location = new System.Drawing.Point(679, 101);
             this.btnDesactive.Name = "btnDesactive";
             this.btnDesactive.Rotation = 0D;
-            this.btnDesactive.Size = new System.Drawing.Size(126, 33);
+            this.btnDesactive.Size = new System.Drawing.Size(126, 28);
             this.btnDesactive.TabIndex = 13;
             this.btnDesactive.Text = "Desactivar";
             this.btnDesactive.UseVisualStyleBackColor = true;
@@ -224,13 +225,14 @@
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconSize = 16;
-            this.btnBuscar.Location = new System.Drawing.Point(529, 96);
+            this.btnBuscar.Location = new System.Drawing.Point(529, 101);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Rotation = 0D;
-            this.btnBuscar.Size = new System.Drawing.Size(144, 33);
+            this.btnBuscar.Size = new System.Drawing.Size(144, 28);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // LoteID
             // 
@@ -263,10 +265,18 @@
             this.Activo.HeaderText = "Activo";
             this.Activo.Name = "Activo";
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(346, 109);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(177, 20);
+            this.txtBuscar.TabIndex = 15;
+            // 
             // BatchesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnDesactive);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvBatches);
@@ -280,6 +290,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBatches)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,5 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

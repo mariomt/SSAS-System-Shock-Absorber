@@ -168,7 +168,23 @@ namespace Cliente.UsersControls
 
         }
 
-
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var lotes = new BatchDomain().SearchLotes(txtBuscar.Text);
+            dgvBatches.Rows.Clear();
+            foreach (var producto in lotes)
+            {
+                DataGridViewRow celda = new DataGridViewRow();
+                celda.CreateCells(dgvBatches);
+                celda.Cells[0].Value = producto.LoteID;
+                celda.Cells[1].Value = producto.ProductoID;
+                celda.Cells[2].Value = producto.FechaHora;
+                celda.Cells[3].Value = producto.Importe;
+                celda.Cells[4].Value = producto.Cantidad;
+                celda.Cells[5].Value = producto.Activo;
+                dgvBatches.Rows.Add(celda);
+            }
         }
+    }
     }
 
