@@ -17,6 +17,7 @@ namespace DataAccess
                                                         WHERE us.NombreUsuario=@usuario AND us.Contrasena=@pass";
         public const string insertNewUser = @"INSERT INTO Usuarios(NombreUsuario,Contrasena,Nombre,ApellidoPaterno,ApellidoMaterno,RolID,Activo) VALUES(@NombreUsuario,@Contrasena,@Nombre,@ApellidoPaterno,@ApellidoMaterno,@RolID,@Activo)";
         public const string selectRol = @"SELECT RolID FROM Roles";
+        public const string selectAllUsers = @"SELECT * FROM Usuarios AS us LEFT JOIN Roles as rl ON us.RolID=rl.RolID";
 
         #endregion
 
