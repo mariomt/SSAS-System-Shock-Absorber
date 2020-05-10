@@ -40,14 +40,14 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.agregarBtn = new System.Windows.Forms.Button();
             this.dgvBatches = new System.Windows.Forms.DataGridView();
-            this.btnDesactive = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.LoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDesactive = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -186,9 +186,13 @@
             // 
             // dgvBatches
             // 
+            this.dgvBatches.AllowUserToAddRows = false;
             this.dgvBatches.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBatches.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBatches.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvBatches.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvBatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LoteID,
@@ -197,42 +201,13 @@
             this.Importe,
             this.Cantidad,
             this.Activo});
+            this.dgvBatches.GridColor = System.Drawing.Color.White;
             this.dgvBatches.Location = new System.Drawing.Point(346, 135);
             this.dgvBatches.Name = "dgvBatches";
             this.dgvBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBatches.Size = new System.Drawing.Size(450, 314);
+            this.dgvBatches.Size = new System.Drawing.Size(470, 314);
             this.dgvBatches.TabIndex = 12;
             this.dgvBatches.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBatches_CellContentClick);
-            // 
-            // btnDesactive
-            // 
-            this.btnDesactive.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnDesactive.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnDesactive.IconColor = System.Drawing.Color.Black;
-            this.btnDesactive.IconSize = 16;
-            this.btnDesactive.Location = new System.Drawing.Point(679, 101);
-            this.btnDesactive.Name = "btnDesactive";
-            this.btnDesactive.Rotation = 0D;
-            this.btnDesactive.Size = new System.Drawing.Size(126, 28);
-            this.btnDesactive.TabIndex = 13;
-            this.btnDesactive.Text = "Desactivar";
-            this.btnDesactive.UseVisualStyleBackColor = true;
-            this.btnDesactive.Click += new System.EventHandler(this.btnDesactive_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscar.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconSize = 16;
-            this.btnBuscar.Location = new System.Drawing.Point(529, 101);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Rotation = 0D;
-            this.btnBuscar.Size = new System.Drawing.Size(144, 28);
-            this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // LoteID
             // 
@@ -265,11 +240,45 @@
             this.Activo.HeaderText = "Activo";
             this.Activo.Name = "Activo";
             // 
+            // btnDesactive
+            // 
+            this.btnDesactive.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDesactive.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnDesactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDesactive.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDesactive.IconColor = System.Drawing.Color.Black;
+            this.btnDesactive.IconSize = 16;
+            this.btnDesactive.Location = new System.Drawing.Point(729, 105);
+            this.btnDesactive.Name = "btnDesactive";
+            this.btnDesactive.Rotation = 0D;
+            this.btnDesactive.Size = new System.Drawing.Size(87, 27);
+            this.btnDesactive.TabIndex = 13;
+            this.btnDesactive.Text = "Desactivar";
+            this.btnDesactive.UseVisualStyleBackColor = false;
+            this.btnDesactive.Click += new System.EventHandler(this.btnDesactive_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnBuscar.IconColor = System.Drawing.Color.Black;
+            this.btnBuscar.IconSize = 16;
+            this.btnBuscar.Location = new System.Drawing.Point(639, 105);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Rotation = 0D;
+            this.btnBuscar.Size = new System.Drawing.Size(87, 27);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(346, 109);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(177, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(290, 20);
             this.txtBuscar.TabIndex = 15;
             // 
             // BatchesControl
