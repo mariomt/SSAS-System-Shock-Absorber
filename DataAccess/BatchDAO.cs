@@ -50,9 +50,19 @@ namespace DataAccess
 
 
         }
-    }
+        public bool bajalote(Batch bajal, IDbTransaction transaccion)
+        {
+            return dbConn.Execute(Queries.bajalote, new
+            {
+                active = bajal.Activo,
+                id = bajal.LoteID
 
- } 
+            }, transaccion) > 0;
+        }
+    }
+}
+
+ 
 
 
 

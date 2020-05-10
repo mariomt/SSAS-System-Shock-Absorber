@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -28,5 +29,9 @@ namespace DataAccess
             },pTransaction) > 0;
         }
 
+        public bool Save(object motivo, IDbTransaction transaction)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

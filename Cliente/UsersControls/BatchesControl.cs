@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entities;
 using Domain;
 using System.Text.RegularExpressions;
+using Domain;
 
 namespace Cliente.UsersControls
 {
@@ -129,15 +130,36 @@ namespace Cliente.UsersControls
                 loteseleccionado = new Batch();
                 loteseleccionado.LoteID = (int)selectedRow.Cells[0].Value;
                 loteseleccionado.ProductoID = (int)selectedRow.Cells[1].Value;
-                loteseleccionado.FechaHora = DateTime.Now
+                loteseleccionado.FechaHora = DateTime.Parse(selectedRow.Cells[2].Value.ToString());
+                loteseleccionado.Importe = double.Parse(selectedRow.Cells[3].Value.ToString());
+                loteseleccionado.Cantidad = int.Parse(selectedRow.Cells[4].Value.ToString());
+                loteseleccionado.Activo = (bool)selectedRow.Cells[5].Value;
+
+                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableService);
+
+                BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
+                if (bitacoraOP != null)
+                {
+                    BatchDomain lote = new BatchDomain();
+                    loteseleccionado.Activo = false;
+                    if (lote.bajalote(loteseleccionado, bitacoraOP))
+                    {
+                        Tools.Alert("Se dio de baja el lote", Form_Alert.enumType.Success);
+                         
+                        cargardgvBatches();
+                    }
+                    else
+                    {
+                        Tools.Alert("Error al guardar la informacion", Form_Alert.enumType.Error);
+                    }
 
 
-                ;
+                }
             }
             catch (Exception)
             {
 
-                throw;
+                
             }
         }
 
@@ -145,5 +167,8 @@ namespace Cliente.UsersControls
         {
 
         }
+
+
+        }
     }
-}
+

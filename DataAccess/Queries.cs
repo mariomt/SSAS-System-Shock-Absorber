@@ -49,7 +49,7 @@ namespace DataAccess
         // Escribe las consultas de Lotes aquí...
         public const string insertBatch = @"INSERT INTO LoteProducto(ProductoID,FechaHora,Importe,Cantidad,Activo) VALUES(@ProductoID,@FechaHora,@Importe,@Cantidad,@Activo)";
         public const string selectAllbatch = @"SELECT LoteID,ProductoID,FechaHora, Cantidad,Activo FROM  LoteProducto";
-
+        public const string bajalote = @"UPDATE LoteProducto SET Activo=@active WHERE LoteID=@id";
         #endregion
 
         #region

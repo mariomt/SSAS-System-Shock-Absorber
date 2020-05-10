@@ -12,6 +12,8 @@ namespace Domain
 {
     public class BatchDomain
     {
+       // private BitacoraOperaciones motivo;
+
         public bool insertBatch(ref Batch batch)
         {
             bool result = false;
@@ -84,5 +86,55 @@ namespace Domain
 
         }
 
+      
+        public bool bajalote(Batch batch, BitacoraOperaciones motivo)
+        {
+
+            bool result = false;
+            using (BatchDAO batchDAO = new BatchDAO())
+            {
+                using (var connection = batchDAO.Connection)
+                {
+                    connection.Open();
+                    var transaction = connection.BeginTransaction();
+                    try
+                    {
+                        result = new BitacoraOperacionesDAO(connection).Save(motivo, transaction);
+                        if (result)
+                        {
+                            result = batchDAO.bajalote(batch, transaction);
+
+
+                            if (result)
+                                transaction.Commit();
+                            else
+                                transaction.Rollback();
+
+                        }
+                        else
+                        {
+                            transaction.Rollback();
+                        }
+
+                    }
+                    catch (SqlException var)
+                    {
+                        transaction.Rollback();
+                        result = false;
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
+                }
+
+            }
+            return result;
+        }
+
+        //throw new NotImplementedException();
     }
 }
+

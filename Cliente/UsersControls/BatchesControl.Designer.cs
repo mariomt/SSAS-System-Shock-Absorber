@@ -40,14 +40,14 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.agregarBtn = new System.Windows.Forms.Button();
             this.dgvBatches = new System.Windows.Forms.DataGridView();
+            this.btnDesactive = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.LoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDesactive = new FontAwesome.Sharp.IconButton();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBatches)).BeginInit();
@@ -196,41 +196,12 @@
             this.Importe,
             this.Cantidad,
             this.Activo});
-            this.dgvBatches.Location = new System.Drawing.Point(333, 135);
+            this.dgvBatches.Location = new System.Drawing.Point(346, 135);
             this.dgvBatches.Name = "dgvBatches";
-            this.dgvBatches.Size = new System.Drawing.Size(635, 314);
+            this.dgvBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBatches.Size = new System.Drawing.Size(450, 314);
             this.dgvBatches.TabIndex = 12;
             this.dgvBatches.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBatches_CellContentClick);
-            // 
-            // LoteID
-            // 
-            this.LoteID.HeaderText = "LoteID";
-            this.LoteID.Name = "LoteID";
-            // 
-            // ProductoID
-            // 
-            this.ProductoID.HeaderText = "ProductoID";
-            this.ProductoID.Name = "ProductoID";
-            // 
-            // FechaHora
-            // 
-            this.FechaHora.HeaderText = "FechaHora";
-            this.FechaHora.Name = "FechaHora";
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
             // 
             // btnDesactive
             // 
@@ -260,6 +231,37 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // LoteID
+            // 
+            this.LoteID.HeaderText = "LoteID";
+            this.LoteID.Name = "LoteID";
+            this.LoteID.ReadOnly = true;
+            // 
+            // ProductoID
+            // 
+            this.ProductoID.HeaderText = "ProductoID";
+            this.ProductoID.Name = "ProductoID";
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "FechaHora";
+            this.FechaHora.Name = "FechaHora";
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
             // 
             // BatchesControl
             // 
