@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblHour = new System.Windows.Forms.Label();
             this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
@@ -288,6 +288,28 @@
             this.panel2.TabIndex = 2;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
+            // lblHour
+            // 
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHour.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblHour.Location = new System.Drawing.Point(54, 54);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(73, 16);
+            this.lblHour.TabIndex = 10;
+            this.lblHour.Text = "00:00 p.m";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Hora:";
+            // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
@@ -404,28 +426,7 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(819, 491);
             this.panelDesktop.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(6, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Hora:";
-            // 
-            // lblHour
-            // 
-            this.lblHour.AutoSize = true;
-            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHour.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblHour.Location = new System.Drawing.Point(54, 54);
-            this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(73, 16);
-            this.lblHour.TabIndex = 10;
-            this.lblHour.Text = "00:00 p.m";
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // hourTimer
             // 

@@ -39,8 +39,18 @@
             this.activoChk = new System.Windows.Forms.CheckBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.agregarBtn = new System.Windows.Forms.Button();
+            this.dgvBatches = new System.Windows.Forms.DataGridView();
+            this.btnDesactive = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.LoteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBatches)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -173,10 +183,93 @@
             this.agregarBtn.UseVisualStyleBackColor = false;
             this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
             // 
+            // dgvBatches
+            // 
+            this.dgvBatches.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LoteID,
+            this.ProductoID,
+            this.FechaHora,
+            this.Importe,
+            this.Cantidad,
+            this.Activo});
+            this.dgvBatches.Location = new System.Drawing.Point(346, 135);
+            this.dgvBatches.Name = "dgvBatches";
+            this.dgvBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBatches.Size = new System.Drawing.Size(450, 314);
+            this.dgvBatches.TabIndex = 12;
+            this.dgvBatches.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBatches_CellContentClick);
+            // 
+            // btnDesactive
+            // 
+            this.btnDesactive.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnDesactive.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDesactive.IconColor = System.Drawing.Color.Black;
+            this.btnDesactive.IconSize = 16;
+            this.btnDesactive.Location = new System.Drawing.Point(679, 96);
+            this.btnDesactive.Name = "btnDesactive";
+            this.btnDesactive.Rotation = 0D;
+            this.btnDesactive.Size = new System.Drawing.Size(126, 33);
+            this.btnDesactive.TabIndex = 13;
+            this.btnDesactive.Text = "Desactivar";
+            this.btnDesactive.UseVisualStyleBackColor = true;
+            this.btnDesactive.Click += new System.EventHandler(this.btnDesactive_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnBuscar.IconColor = System.Drawing.Color.Black;
+            this.btnBuscar.IconSize = 16;
+            this.btnBuscar.Location = new System.Drawing.Point(529, 96);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Rotation = 0D;
+            this.btnBuscar.Size = new System.Drawing.Size(144, 33);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // LoteID
+            // 
+            this.LoteID.HeaderText = "LoteID";
+            this.LoteID.Name = "LoteID";
+            this.LoteID.ReadOnly = true;
+            // 
+            // ProductoID
+            // 
+            this.ProductoID.HeaderText = "ProductoID";
+            this.ProductoID.Name = "ProductoID";
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "FechaHora";
+            this.FechaHora.Name = "FechaHora";
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            // 
             // BatchesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDesactive);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.dgvBatches);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "BatchesControl";
             this.Size = new System.Drawing.Size(819, 491);
@@ -185,6 +278,7 @@
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBatches)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +296,14 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button agregarBtn;
         private System.Windows.Forms.ComboBox ProductoCb;
+        private System.Windows.Forms.DataGridView dgvBatches;
+        private FontAwesome.Sharp.IconButton btnDesactive;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoteID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
     }
 }

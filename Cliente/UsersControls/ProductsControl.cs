@@ -99,6 +99,7 @@ namespace Cliente
             }
 
         }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -151,7 +152,7 @@ namespace Cliente
                 BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
                 if (bitacoraOP != null)
                 {
-                    ProductDomain producto = new ProductDomain();
+                   ProductDomain producto = new ProductDomain();
                     productoseleccionado.Activo = false;
                     if (producto.bajaproducto(productoseleccionado, bitacoraOP))
                     {
