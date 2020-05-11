@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Entities;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -63,10 +64,29 @@ namespace DataAccess
                     Activo = user.Activo
                 }
             );
+        }
 
+        public IEnumerable<User> searchUsers(string usuario)
+        {
+            var result = dbConn.Query<User, Rol,User>(  Queries.searchUsers, (user, rol) => { user.rol = rol; return user; },
+                                                        new { NombreUsuario = usuario}, splitOn: "UsuarioID,RolID").ToList();
+            return result;
+        }
 
-
-
+        public void updateUserByID(User user)
+        {
+            dbConn.Execute(Queries.updateUserByID,
+                new 
+                {
+                    UsuarioID = user.UsuarioID,
+                    NombreUsuario = user.NombreUsuario,
+                    Contrasena = user.Contrasena,
+                    Nombre = user.Nombre,
+                    ApellidoPaterno = user.ApellidoPaterno,
+                    ApellidoMaterno = user.ApellidoMaterno,
+                    RolID = user.rol.RolId,
+                }
+            );
         }
     }
 }

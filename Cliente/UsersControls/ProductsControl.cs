@@ -19,7 +19,6 @@ namespace Cliente
     public partial class ProductsControl : UserControl
     {
         Product productoseleccionado;
-        IDictionary<string,Regex> validationRegEx;
 
         public ProductsControl()
         {

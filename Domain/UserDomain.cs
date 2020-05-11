@@ -1,6 +1,6 @@
 ﻿using DataAccess;
 using Entities;
-
+using System.Collections.Generic;
 
 namespace Domain
 {
@@ -34,6 +34,16 @@ namespace Domain
         {
             new UserDAO().insertUser(user);
 
+        }
+
+        public IEnumerable<User> searchUsers(ref string usuario)
+        {
+            return new UserDAO().searchUsers(usuario);
+        }
+
+        public void updateUserByID(ref User user)
+        {
+            new UserDAO().updateUserByID(user);
         }
 
     }

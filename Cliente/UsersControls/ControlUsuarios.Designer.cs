@@ -43,24 +43,29 @@
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.userGv = new System.Windows.Forms.DataGridView();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.UsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.RolID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userGv)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtln2
             // 
             this.txtln2.AutoSize = true;
             this.txtln2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtln2.Location = new System.Drawing.Point(12, 141);
+            this.txtln2.Location = new System.Drawing.Point(13, 202);
             this.txtln2.Name = "txtln2";
             this.txtln2.Size = new System.Drawing.Size(132, 20);
             this.txtln2.TabIndex = 42;
@@ -69,7 +74,7 @@
             // txt_LastName2
             // 
             this.txt_LastName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_LastName2.Location = new System.Drawing.Point(16, 164);
+            this.txt_LastName2.Location = new System.Drawing.Point(13, 225);
             this.txt_LastName2.Name = "txt_LastName2";
             this.txt_LastName2.Size = new System.Drawing.Size(293, 22);
             this.txt_LastName2.TabIndex = 41;
@@ -78,7 +83,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.label3);
             this.flowLayoutPanel2.Controls.Add(this.cb_Rol);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(16, 310);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 253);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(262, 45);
             this.flowLayoutPanel2.TabIndex = 30;
@@ -103,9 +108,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 37;
@@ -114,16 +120,16 @@
             // txt_Name
             // 
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(16, 46);
+            this.txt_Name.Location = new System.Drawing.Point(13, 33);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(297, 22);
+            this.txt_Name.Size = new System.Drawing.Size(293, 22);
             this.txt_Name.TabIndex = 40;
             // 
             // txt_ln1
             // 
             this.txt_ln1.AutoSize = true;
             this.txt_ln1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ln1.Location = new System.Drawing.Point(12, 80);
+            this.txt_ln1.Location = new System.Drawing.Point(13, 154);
             this.txt_ln1.Name = "txt_ln1";
             this.txt_ln1.Size = new System.Drawing.Size(129, 20);
             this.txt_ln1.TabIndex = 39;
@@ -132,16 +138,17 @@
             // txt_LastName1
             // 
             this.txt_LastName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_LastName1.Location = new System.Drawing.Point(16, 103);
+            this.txt_LastName1.Location = new System.Drawing.Point(13, 177);
             this.txt_LastName1.Name = "txt_LastName1";
             this.txt_LastName1.Size = new System.Drawing.Size(293, 22);
             this.txt_LastName1.TabIndex = 38;
             // 
             // txtu
             // 
+            this.txtu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtu.AutoSize = true;
             this.txtu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtu.Location = new System.Drawing.Point(12, 195);
+            this.txtu.Location = new System.Drawing.Point(13, 58);
             this.txtu.Name = "txtu";
             this.txtu.Size = new System.Drawing.Size(68, 20);
             this.txtu.TabIndex = 33;
@@ -150,16 +157,17 @@
             // txt_User
             // 
             this.txt_User.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_User.Location = new System.Drawing.Point(16, 218);
+            this.txt_User.Location = new System.Drawing.Point(13, 81);
             this.txt_User.Name = "txt_User";
             this.txt_User.Size = new System.Drawing.Size(293, 22);
             this.txt_User.TabIndex = 34;
             // 
             // txtc
             // 
+            this.txtc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtc.AutoSize = true;
             this.txtc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtc.Location = new System.Drawing.Point(12, 253);
+            this.txtc.Location = new System.Drawing.Point(13, 106);
             this.txtc.Name = "txtc";
             this.txtc.Size = new System.Drawing.Size(96, 20);
             this.txtc.TabIndex = 31;
@@ -168,7 +176,7 @@
             // txt_Pass
             // 
             this.txt_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.Location = new System.Drawing.Point(16, 276);
+            this.txt_Pass.Location = new System.Drawing.Point(13, 129);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(293, 22);
             this.txt_Pass.TabIndex = 32;
@@ -181,7 +189,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(16, 361);
+            this.button2.Location = new System.Drawing.Point(13, 304);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 32);
             this.button2.TabIndex = 35;
@@ -195,7 +203,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(170, 361);
+            this.button3.Location = new System.Drawing.Point(162, 304);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(143, 32);
             this.button3.TabIndex = 36;
@@ -203,55 +211,35 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView1
+            // userGv
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userGv.AllowUserToAddRows = false;
+            this.userGv.AllowUserToDeleteRows = false;
+            this.userGv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.userGv.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.userGv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UsuarioID,
             this.Nombre,
             this.ApellidoPaterno,
             this.ApellidoMaterno,
             this.NombreUsuario,
-            this.DescripcionRol});
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(358, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(458, 347);
-            this.dataGridView1.TabIndex = 43;
-            // 
-            // UsuarioID
-            // 
-            this.UsuarioID.HeaderText = "ID";
-            this.UsuarioID.Name = "UsuarioID";
-            this.UsuarioID.Width = 40;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.HeaderText = "Usuario";
-            this.NombreUsuario.Name = "NombreUsuario";
-            // 
-            // DescripcionRol
-            // 
-            this.DescripcionRol.HeaderText = "Rol";
-            this.DescripcionRol.Name = "DescripcionRol";
+            this.Contrasena,
+            this.DescripcionRol,
+            this.RolID});
+            this.userGv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.userGv.GridColor = System.Drawing.Color.White;
+            this.userGv.Location = new System.Drawing.Point(341, 135);
+            this.userGv.MultiSelect = false;
+            this.userGv.Name = "userGv";
+            this.userGv.ReadOnly = true;
+            this.userGv.RowHeadersVisible = false;
+            this.userGv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userGv.Size = new System.Drawing.Size(469, 350);
+            this.userGv.TabIndex = 43;
+            this.userGv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGv_CellContentClick);
             // 
             // iconButton1
             // 
@@ -266,47 +254,126 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 16;
-            this.iconButton1.Location = new System.Drawing.Point(701, 17);
+            this.iconButton1.Location = new System.Drawing.Point(675, 94);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(87, 27);
             this.iconButton1.TabIndex = 45;
             this.iconButton1.Text = "Buscar";
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // txtBuscar
             // 
             this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBuscar.Location = new System.Drawing.Point(405, 20);
+            this.txtBuscar.Location = new System.Drawing.Point(370, 94);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(290, 20);
             this.txtBuscar.TabIndex = 44;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.txt_Name);
+            this.flowLayoutPanel1.Controls.Add(this.txtu);
+            this.flowLayoutPanel1.Controls.Add(this.txt_User);
+            this.flowLayoutPanel1.Controls.Add(this.txtc);
+            this.flowLayoutPanel1.Controls.Add(this.txt_Pass);
+            this.flowLayoutPanel1.Controls.Add(this.txt_ln1);
+            this.flowLayoutPanel1.Controls.Add(this.txt_LastName1);
+            this.flowLayoutPanel1.Controls.Add(this.txtln2);
+            this.flowLayoutPanel1.Controls.Add(this.txt_LastName2);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 135);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 350);
+            this.flowLayoutPanel1.TabIndex = 46;
+            // 
+            // UsuarioID
+            // 
+            this.UsuarioID.HeaderText = "ID";
+            this.UsuarioID.Name = "UsuarioID";
+            this.UsuarioID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.HeaderText = "Usuario";
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.ReadOnly = true;
+            // 
+            // Contrasena
+            // 
+            this.Contrasena.HeaderText = "Contraseña";
+            this.Contrasena.Name = "Contrasena";
+            this.Contrasena.ReadOnly = true;
+            // 
+            // DescripcionRol
+            // 
+            this.DescripcionRol.HeaderText = "Rol";
+            this.DescripcionRol.Name = "DescripcionRol";
+            this.DescripcionRol.ReadOnly = true;
+            // 
+            // RolID
+            // 
+            this.RolID.HeaderText = "RolID";
+            this.RolID.Name = "RolID";
+            this.RolID.ReadOnly = true;
+            this.RolID.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 32);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Nuevo Usuario";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtln2);
-            this.Controls.Add(this.txt_LastName2);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.txt_ln1);
-            this.Controls.Add(this.txt_LastName1);
-            this.Controls.Add(this.txtu);
-            this.Controls.Add(this.txt_User);
-            this.Controls.Add(this.txtc);
-            this.Controls.Add(this.txt_Pass);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.userGv);
             this.Name = "ControlUsuarios";
-            this.Size = new System.Drawing.Size(819, 463);
+            this.Size = new System.Drawing.Size(819, 491);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userGv)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,14 +396,18 @@
         private System.Windows.Forms.TextBox txt_Pass;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView userGv;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasena;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionRol;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RolID;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -17,7 +17,6 @@ namespace Cliente.UsersControls
     public partial class BatchesControl : UserControl
     {
         Batch loteseleccionado;
-        IDictionary<string, Regex> validationRegEx;
         public BatchesControl()
         {
             InitializeComponent();

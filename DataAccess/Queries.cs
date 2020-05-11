@@ -17,7 +17,13 @@ namespace DataAccess
                                                         WHERE us.NombreUsuario=@usuario AND us.Contrasena=@pass";
         public const string insertNewUser = @"INSERT INTO Usuarios(NombreUsuario,Contrasena,Nombre,ApellidoPaterno,ApellidoMaterno,RolID,Activo) VALUES(@NombreUsuario,@Contrasena,@Nombre,@ApellidoPaterno,@ApellidoMaterno,@RolID,@Activo)";
         public const string selectRol = @"SELECT RolID FROM Roles";
-        public const string selectAllUsers = @"SELECT * FROM Usuarios AS us LEFT JOIN Roles as rl ON us.RolID=rl.RolID";
+
+        public const string searchUsers = @"SELECT us.UsuarioID, us.NombreUsuario, us.Contrasena,us.Nombre,us.ApellidoPaterno,us.ApellidoMaterno, us.Activo, rl.RolID, rl.Descripcion  
+                                            FROM Usuarios AS us LEFT JOIN Roles as rl ON us.RolID=rl.RolID
+                                            WHERE us.NombreUsuario LIKE CONCAT('%',@NombreUsuario,'%') OR @NombreUsuario = '-1'";
+        public const string updateUserByID = @"UPDATE Usuarios SET NombreUsuario=@NombreUsuario,Contrasena=@Contrasena,Nombre=@Nombre,
+					                                                ApellidoPaterno=@ApellidoPaterno,ApellidoMaterno=@ApellidoMaterno,RolID=@RolID
+                                                WHERE UsuarioID = @UsuarioID";
 
         #endregion
 
