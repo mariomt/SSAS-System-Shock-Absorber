@@ -22,8 +22,10 @@ namespace DataAccess
                                             FROM Usuarios AS us LEFT JOIN Roles as rl ON us.RolID=rl.RolID
                                             WHERE us.NombreUsuario LIKE CONCAT('%',@NombreUsuario,'%') OR @NombreUsuario = '-1'";
         public const string updateUserByID = @"UPDATE Usuarios SET NombreUsuario=@NombreUsuario,Contrasena=@Contrasena,Nombre=@Nombre,
-					                                                ApellidoPaterno=@ApellidoPaterno,ApellidoMaterno=@ApellidoMaterno,RolID=@RolID
+					                                                ApellidoPaterno=@ApellidoPaterno,ApellidoMaterno=@ApellidoMaterno,RolID=@RolID,
+                                                                    Activo=@Activo
                                                 WHERE UsuarioID = @UsuarioID";
+        public const string deleteUserByID = @"DELETE FROM Usuarios WHERE UsuarioID=@UsuairoID";
 
         #endregion
 
