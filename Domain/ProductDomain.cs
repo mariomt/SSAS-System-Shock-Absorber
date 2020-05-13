@@ -12,6 +12,12 @@ namespace Domain
 {
     public class ProductDomain
     {
+
+        public Product GetProductById(int id)
+        {
+            return new ProductDAO().GetProductById(id);
+        }
+
         public void insertNewProduct(ref Product product)
         {
             new ProductDAO().insertProduct(product);

@@ -11,6 +11,11 @@ namespace Domain
 {
     public class ServiceDomain
     {
+
+        public Service GetServiceById(int id)
+        {
+            return new ServiceDAO().GetServiceById(id);
+        }
         public bool insertNewProduct(Service service)
         {
             return new ServiceDAO().insertNewService(service);

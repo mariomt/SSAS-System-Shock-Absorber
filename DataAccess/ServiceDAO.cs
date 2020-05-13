@@ -33,6 +33,13 @@ namespace DataAccess
             }
         }
 
+        public Service GetServiceById(int id, IDbTransaction pTransaction = null)
+        {
+            return dbConn.QueryFirstOrDefault<Service>(Queries.selectServiceById, new { 
+                servicioID = id
+            });
+        }
+
         public bool insertNewService(Service pService)
         {
             var result = dbConn.Execute(Queries.insertService, new

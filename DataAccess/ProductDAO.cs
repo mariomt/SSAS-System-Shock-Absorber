@@ -31,6 +31,19 @@ namespace DataAccess
             }
         }
 
+        /// <summary>
+        /// Selecciona un producto de la base de datos con el id indicado
+        /// </summary>
+        /// <param name="id">Id del producto</param>
+        /// <param name="pTransaction"></param>
+        /// <returns>Regresa un producto</returns>
+        public Product GetProductById(int id, IDbTransaction pTransaction = null)
+        {
+            return dbConn.QueryFirstOrDefault<Product>(Queries.selectProductById, new
+            {
+                productoID = id
+            }, pTransaction);
+        }
         public void insertProduct(Product product)
         {
             dbConn.Execute(Queries.insertNewProduct,
