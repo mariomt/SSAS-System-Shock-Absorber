@@ -32,8 +32,9 @@ namespace DataAccess
         //para insertar un nuevo producto
         public const string insertNewProduct = @"INSERT INTO Productos(Descripcion,PrecioVenta,Disponibilidad,IVA,Activo) VALUES(@Descripcion,@PrecioVenta,@Disponibilidad,@IVA,@Activo)";
         public const string selectAllProduct = @"SELECT ProductoID,Descripcion,PrecioVenta, Disponibilidad,IVA,Activo FROM Productos";
+        public const string selectProductById = @"SELECT ProductoID,Descripcion,PrecioVenta, Disponibilidad,IVA,Activo FROM Productos WHERE ProductoID=@productoID";
         public const string searchProductsBydescription = @"SELECT ProductoID,Descripcion,PrecioVenta,Disponibilidad,IVA,Activo FROM Productos where Descripcion LIKE @product";
-        public const string  BajaProducto = @"UPDATE Productos SET Activo=@active WHERE ProductoID=@id";
+        public const string BajaProducto = @"UPDATE Productos SET Activo=@active WHERE ProductoID=@id";
         public const string updateProduct = @"UPDATE Productos SET Descripcion=@desc, PrecioVenta=@pVenta, Disponibilidad=@disp, IVA=@iva, Activo=@act WHERE ProductoID=@prodID";
         #endregion
 
@@ -41,6 +42,7 @@ namespace DataAccess
         #region Servicios
         // Escribe las consultas de Servicios quí...
         public const string selectAllServices = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios";
+        public const string selectServiceById = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios WHERE ServicioID=@servicioID";
         public const string selectServicesByName = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios WHERE Nombre LIKE @service";
         public const string disablService = @"UPDATE Servicios SET Activo=@active WHERE ServicioID=@id";
         public const string insertService = @"INSERT INTO Servicios(Nombre, Descripcion, Activo) VALUES(@name,@description,@active)";
@@ -48,8 +50,9 @@ namespace DataAccess
 
         #region Ventas
         // Escribe las consultas de ventas aquí...
-
-
+        public const string insertNewSale = @"INSERT INTO Ventas(UsuarioID, ImporteTotal) VALUES(@usuario, @impTotal); SELECT @@Identity;";
+        public const string insertProductToSale = @"INSERT INTO DescripcionVenta(VentaID, ProductoID, ServicioID, Cantidad, PrecioUnit, DescuentoID) VALUES(@ventaID, @productoID, NULL, @cantidad, @precioUnitario, NULL )";
+        public const string insertServiceToSale = @"INSERT INTO DescripcionVenta(VentaID, ProductoID, ServicioID, Cantidad, PrecioUnit, DescuentoID) VALUES(@ventaID, NULL, @servicioID, @cantidad, @precioUnitario, NULL )";
         #endregion
 
         #region Lotes

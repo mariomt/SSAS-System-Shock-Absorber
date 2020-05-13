@@ -13,7 +13,7 @@ namespace Entities
 
         public DateTime FechaHora { get; set; }
 
-        public IEnumerable<DescripcionVenta> descripcion { get; set; }
+        public List<DescripcionVenta> descripcion { get; set; }
         public double ImporteTotal { get; set; }
 
 
