@@ -244,7 +244,7 @@
             this.userGv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userGv.Size = new System.Drawing.Size(469, 350);
             this.userGv.TabIndex = 43;
-            this.userGv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGv_CellContentClick);
+            this.userGv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGv_CellContentClick);
             // 
             // UsuarioID
             // 
