@@ -16,6 +16,7 @@ namespace Cliente
             this.loginForm = loginForm;
             this.currentUser = user;
             InitializeComponent();
+            MainInformation.mainPanel = panelDesktop;
             //this.labelClose.Text=$"Hola {user.Correo}";
             lblUserName.Text = user.Nombre +" "+ user.ApellidoPaterno;
             lblRol.Text = user.rol.Descripcion;

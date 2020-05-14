@@ -85,10 +85,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 150);
+            this.ControlBox = false;
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
             this.Name = "InputForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -101,8 +103,8 @@
 
         #endregion
         private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Entities;
 using Domain;
 using System.Text.RegularExpressions;
-using Domain;
 
 namespace Cliente.UsersControls
 {

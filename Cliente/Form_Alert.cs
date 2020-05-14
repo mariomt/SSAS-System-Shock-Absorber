@@ -77,6 +77,31 @@ namespace Cliente
             }
         }
 
+        public void showAlertInPanel(string msg, enumType type, Panel panel)
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Opacity = 0.0;
+            string fname;
+
+            for (int i = 1; i < 10; i++)
+            {
+                fname = "alert" + i.ToString();
+                Form_Alert frm = (Form_Alert)Application.OpenForms[fname];
+
+                if (frm == null)
+                {
+                    this.Name = fname;
+                    this.x = panel.Width - (this.Width + 15);
+                    this.y = panel.Height - (this.Height * i) - 5;
+                    this.Location = new Point(this.x, this.y);
+                    break;
+                }
+            }
+            this.x = panel.Width - base.Width - 5;
+
+            showFormat(msg, type);
+        }
+
         public void showAlert(string msg, enumType type)
         {
 
@@ -100,6 +125,11 @@ namespace Cliente
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
+            showFormat(msg, type);
+        }
+
+        private void showFormat(string msg, enumType type)
+        {
             switch (type)
             {
                 case enumType.Success:

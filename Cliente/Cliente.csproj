@@ -75,6 +75,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainInformation.cs" />
+    <Compile Include="ShowInput.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="UsersControls\BatchesControl.cs">
       <SubType>UserControl</SubType>

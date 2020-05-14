@@ -139,11 +139,10 @@ namespace Cliente
                 productoseleccionado.ProductoID = (int)selectedRow.Cells[0].Value;
                 productoseleccionado.Descripcion = selectedRow.Cells[1].Value.ToString();
                 productoseleccionado.IVA = double.Parse(selectedRow.Cells[2].Value.ToString());
-                productoseleccionado.Disponibilidad = int.Parse(selectedRow.Cells[3].Value.ToString());
-                productoseleccionado.PrecioVenta = double.Parse(selectedRow.Cells[4].Value.ToString());
+                productoseleccionado.PrecioVenta = double.Parse(selectedRow.Cells[3].Value.ToString());
+                productoseleccionado.Disponibilidad = int.Parse(selectedRow.Cells[4].Value.ToString());
                 productoseleccionado.Activo = (bool)selectedRow.Cells[5].Value;
 
-                
 
 
                 Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableService);
@@ -161,7 +160,7 @@ namespace Cliente
                     }
                     else
                     {
-                        Tools.Alert("Error al guardar la informacion", Form_Alert.enumType.Error);
+                        Tools.Alert("Error al guardar la información", Form_Alert.enumType.Error);
                     }
                         
 
@@ -170,7 +169,7 @@ namespace Cliente
             }
             catch (ArgumentOutOfRangeException)
             {
-                Tools.Alert("No se selecciono ningun registro",Form_Alert.enumType.Error);
+                Tools.Alert("No se seleccionó ningún registro",Form_Alert.enumType.Error);
             }
             
 
