@@ -44,9 +44,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.userGv = new System.Windows.Forms.DataGridView();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.UsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +52,12 @@
             this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.activoChk = new System.Windows.Forms.CheckBox();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGv)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -83,9 +85,10 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.label3);
             this.flowLayoutPanel2.Controls.Add(this.cb_Rol);
+            this.flowLayoutPanel2.Controls.Add(this.activoChk);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 253);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(262, 45);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(292, 53);
             this.flowLayoutPanel2.TabIndex = 30;
             // 
             // label3
@@ -189,12 +192,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(13, 304);
+            this.button2.Location = new System.Drawing.Point(13, 312);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 32);
             this.button2.TabIndex = 35;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -203,7 +207,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(162, 304);
+            this.button3.Location = new System.Drawing.Point(162, 312);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(143, 32);
             this.button3.TabIndex = 36;
@@ -228,7 +232,8 @@
             this.NombreUsuario,
             this.Contrasena,
             this.DescripcionRol,
-            this.RolID});
+            this.RolID,
+            this.Activo});
             this.userGv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.userGv.GridColor = System.Drawing.Color.White;
             this.userGv.Location = new System.Drawing.Point(341, 135);
@@ -239,7 +244,56 @@
             this.userGv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.userGv.Size = new System.Drawing.Size(469, 350);
             this.userGv.TabIndex = 43;
-            this.userGv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGv_CellContentClick);
+            this.userGv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGv_CellContentClick);
+            // 
+            // UsuarioID
+            // 
+            this.UsuarioID.HeaderText = "ID";
+            this.UsuarioID.Name = "UsuarioID";
+            this.UsuarioID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.HeaderText = "Usuario";
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.ReadOnly = true;
+            // 
+            // Contrasena
+            // 
+            this.Contrasena.HeaderText = "Contraseña";
+            this.Contrasena.Name = "Contrasena";
+            this.Contrasena.ReadOnly = true;
+            // 
+            // DescripcionRol
+            // 
+            this.DescripcionRol.HeaderText = "Rol";
+            this.DescripcionRol.Name = "DescripcionRol";
+            this.DescripcionRol.ReadOnly = true;
+            // 
+            // RolID
+            // 
+            this.RolID.HeaderText = "RolID";
+            this.RolID.Name = "RolID";
+            this.RolID.ReadOnly = true;
+            this.RolID.Visible = false;
             // 
             // iconButton1
             // 
@@ -293,55 +347,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 350);
             this.flowLayoutPanel1.TabIndex = 46;
             // 
-            // UsuarioID
-            // 
-            this.UsuarioID.HeaderText = "ID";
-            this.UsuarioID.Name = "UsuarioID";
-            this.UsuarioID.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            this.ApellidoPaterno.ReadOnly = true;
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.HeaderText = "ApellidoMaterno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            this.ApellidoMaterno.ReadOnly = true;
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.HeaderText = "Usuario";
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.ReadOnly = true;
-            // 
-            // Contrasena
-            // 
-            this.Contrasena.HeaderText = "Contraseña";
-            this.Contrasena.Name = "Contrasena";
-            this.Contrasena.ReadOnly = true;
-            // 
-            // DescripcionRol
-            // 
-            this.DescripcionRol.HeaderText = "Rol";
-            this.DescripcionRol.Name = "DescripcionRol";
-            this.DescripcionRol.ReadOnly = true;
-            // 
-            // RolID
-            // 
-            this.RolID.HeaderText = "RolID";
-            this.RolID.Name = "RolID";
-            this.RolID.ReadOnly = true;
-            this.RolID.Visible = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -357,6 +362,24 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // activoChk
+            // 
+            this.activoChk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.activoChk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activoChk.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.activoChk.Location = new System.Drawing.Point(3, 30);
+            this.activoChk.Name = "activoChk";
+            this.activoChk.Size = new System.Drawing.Size(164, 23);
+            this.activoChk.TabIndex = 30;
+            this.activoChk.Text = "Activo";
+            this.activoChk.UseVisualStyleBackColor = true;
+            // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
             // 
             // ControlUsuarios
             // 
@@ -409,5 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn RolID;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox activoChk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
     }
 }

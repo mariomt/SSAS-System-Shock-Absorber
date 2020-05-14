@@ -69,7 +69,7 @@ namespace Cliente.UsersControls
                     NombreUsuario = txt_User.Text,
                     Contrasena = txt_Pass.Text,
                     rol = rol,
-                    Activo = true
+                    Activo = activoChk.Checked
                 };
 
                 new UserDomain().insertNewUser(ref user);
@@ -91,7 +91,8 @@ namespace Cliente.UsersControls
                     ApellidoMaterno = txt_LastName2.Text,
                     NombreUsuario = txt_User.Text,
                     Contrasena = txt_Pass.Text,
-                    rol = rol
+                    rol = rol,
+                    Activo = activoChk.Checked
                 };
 
                 new UserDomain().updateUserByID(ref user);
@@ -118,6 +119,7 @@ namespace Cliente.UsersControls
                 celda.Cells[5].Value = eachUsuario.Contrasena;
                 celda.Cells[6].Value = eachUsuario.rol.Descripcion;
                 celda.Cells[7].Value = eachUsuario.rol.RolId;
+                celda.Cells[8].Value = eachUsuario.Activo;
                 userGv.Rows.Add(celda);
             }
         }
@@ -147,9 +149,11 @@ namespace Cliente.UsersControls
             txt_Pass.Text = usuarioSeleccionado[5].Value.ToString();
             txt_LastName1.Text = usuarioSeleccionado[2].Value.ToString();
             txt_LastName2.Text = usuarioSeleccionado[3].Value.ToString();
-            cb_Rol.SelectedValue = 1;
+            cb_Rol.SelectedValue = Int32.Parse(usuarioSeleccionado[7].Value.ToString());
+            activoChk.Checked = bool.Parse(usuarioSeleccionado[8].Value.ToString());
 
             button3.Text = "Actualizar";
+            button2.Text = "Eliminar";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -165,9 +169,22 @@ namespace Cliente.UsersControls
             txt_LastName1.Text = "";
             txt_LastName2.Text = "";
             cb_Rol.SelectedValue = -1;
+            activoChk.Checked = false;
 
             button3.Text = "Agregar";
+            button2.Text = "Cancelar";
             button1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(button2.Text== "Eliminar")
+            {
+                new UserDomain().deleteUserByID(ref UsuarioSeleccionado);
+                Tools.Alert("Usuario Eliminado!", Form_Alert.enumType.Success);
+            }
+            cleanForm();
+            consultarUsuarios("-1");
         }
     }
 }

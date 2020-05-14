@@ -46,5 +46,10 @@ namespace Domain
             new UserDAO().updateUserByID(user);
         }
 
+        public void deleteUserByID(ref int UserID)
+        {
+            new UserDAO().deleteUserByID(UserID);
+        }
+
     }
 }

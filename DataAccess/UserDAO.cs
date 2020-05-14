@@ -85,6 +85,17 @@ namespace DataAccess
                     ApellidoPaterno = user.ApellidoPaterno,
                     ApellidoMaterno = user.ApellidoMaterno,
                     RolID = user.rol.RolId,
+                    Activo = user.Activo
+                }
+            );
+        }
+
+        public void deleteUserByID(int UserID)
+        {
+            dbConn.Execute(Queries.deleteUserByID,
+                new 
+                {
+                    UsuairoID=UserID
                 }
             );
         }
