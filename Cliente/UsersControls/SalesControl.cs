@@ -198,10 +198,11 @@ namespace Cliente.UsersControls
             {
                 if (txtSearch.Text.Trim().Length != 0)
                 {
-                    if (txtSearch.Text.ToLower()[0] == 's')
-                        addService(int.Parse(txtSearch.Text.Substring(1, txtSearch.Text.Length - 1)));
+                    dynamic obj = arrayServiceProduct(txtSearch.Text.Trim().ToLower());
+                    if (obj.isService)
+                        addService(obj.id, obj.cantidad);
                     else
-                        addProduct(int.Parse(txtSearch.Text));
+                        addProduct(obj.id, obj.cantidad);
 
                     e.Handled = true;
                     txtSearch.Text = string.Empty;
