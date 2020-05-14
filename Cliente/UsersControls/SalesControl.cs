@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Cliente.UsersControls
 {
@@ -326,6 +327,31 @@ namespace Cliente.UsersControls
             {
                 Tools.AlertInToApp("No se seleccionó ningún registro", Form_Alert.enumType.Error);
             }
+        }
+
+        private object arrayServiceProduct(string ps)
+        {
+
+            Regex cantidadRegEx = new Regex(@"(^\d*\*)");
+            Match cantidadMatch = cantidadRegEx.Match(ps);
+            string cantidadStr = cantidadMatch.Groups[1].ToString();
+            int cantidadInt = cantidadMatch.Success ? Int32.Parse(cantidadStr.Remove(cantidadStr.Length - 1)) : 1;
+
+            Regex productIdRegEx = new Regex(@"\d*$");
+            Match productIdMatch = productIdRegEx.Match(ps);
+            int productId = Int32.Parse(productIdMatch.Groups[0].ToString());
+
+            Regex serviceRegEx = new Regex(@"s");
+            Match serviceMatch = serviceRegEx.Match(ps);
+            bool esServicio = serviceMatch.Success;
+
+            return new
+            {
+                cantidad = cantidadInt,
+                id = productId,
+                isService = esServicio
+            };
+
         }
     }
 }
