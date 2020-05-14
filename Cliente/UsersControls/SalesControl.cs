@@ -26,7 +26,7 @@ namespace Cliente.UsersControls
 
         private void consultaProductoBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mi mensaje");
+            new ProductInfo().ShowDialog(this);
         }
 
         private void SalesControl_KeyDown(object sender, KeyEventArgs e)
