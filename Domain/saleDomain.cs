@@ -14,7 +14,47 @@ namespace Domain
             try
             {
                 getTotal(ref pSale);
-                result = new salesDAO().insert(pSale);
+                using (salesDAO sale = new salesDAO()) {
+                    using( var connection = sale.Connection)
+                    {
+                        connection.Open();
+                        try
+                        {
+                            var transaction = connection.BeginTransaction();
+                            result = sale.insert(pSale, transaction);
+                            if (result)
+                            {
+                                foreach (var prod in pSale.descripcion)
+                                {
+                                    if (prod.ProductoID > 0)
+                                    {
+                                        result = new ProductDAO(connection).updateDisponibilidad(prod.ProductoID, 0 - prod.Cantidad, transaction);
+                                        if (!result)
+                                        {
+                                            transaction.Rollback();
+                                            break;
+                                        }
+
+                                    }
+                                }
+                                if (result)
+                                    transaction.Commit();
+                            }
+                            else
+                            {
+                                transaction.Rollback();
+                            }
+                        } catch( Exception e)
+                        {
+                            throw e;
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                        
+                    }
+                }
             }catch(totalException e)
             {
                 throw e;

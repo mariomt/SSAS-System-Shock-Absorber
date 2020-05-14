@@ -84,6 +84,20 @@ namespace Cliente.UsersControls
             }
             else
             {
+                if(producto.Disponibilidad <= 0)
+                {
+                    Tools.AlertInToApp("Producto agotado!",Form_Alert.enumType.Info);
+                    return;
+                }
+
+                if(producto.Disponibilidad < cant)
+                {
+                    DialogResult result = MessageBox.Show("Solo quedan " + producto.Disponibilidad + "productos disponibles. \n Desea agregarlos?","Diponibilidad",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                        return;
+
+                    cant = producto.Disponibilidad;
+                }
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView1);
                 row.Cells[0].Value = producto.ProductoID;
@@ -305,7 +319,9 @@ namespace Cliente.UsersControls
 
         private void cancelarBtn_Click(object sender, EventArgs e)
         {
-            clearSale();
+            DialogResult result = MessageBox.Show("Seguro que desea cancelar la venta?","Cancelar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+                clearSale();
         }
 
         private void borrarBtn_Click(object sender, EventArgs e)

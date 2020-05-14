@@ -33,9 +33,10 @@ namespace DataAccess
         public bool insert(Sale pSale, IDbTransaction pTransaction = null)
         {
             bool result = false;
+            bool isTransactionNull = pTransaction == null;
             try
             {
-                if (pTransaction == null)
+                if (isTransactionNull)
                 {
                     if (dbConn.State == ConnectionState.Closed)
                         dbConn.Open();
@@ -75,25 +76,30 @@ namespace DataAccess
                         }
                         else
                         {
-                            pTransaction.Rollback();
+                            if(isTransactionNull)
+                                pTransaction.Rollback();
                             throw new Exception("No puede haber una descripcion sin producto o servicio asignado");
                         }
 
 
-
                         if (!result)
                         {
-                            pTransaction.Rollback();
+                            if (isTransactionNull)
+                                pTransaction.Rollback();
                             throw new Exception("Ocurrio un error al guardar la venta");
                         }
                     }
 
-                    if (result)
-                        pTransaction.Commit();
+                    if (result && isTransactionNull)
+                    {
+                            pTransaction.Commit();
+                    }
                 }
                 else
                 {
-                    pTransaction.Rollback();
+                    if (isTransactionNull)
+                        pTransaction.Rollback();
+
                     result = false;
                 }
 
@@ -109,7 +115,8 @@ namespace DataAccess
             }
             finally
             {
-                dbConn.Close();
+                if (isTransactionNull)
+                    dbConn.Close();
             }
 
             return result;

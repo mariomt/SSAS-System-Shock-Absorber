@@ -54,6 +54,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.hourTimer = new System.Windows.Forms.Timer(this.components);
+            this.panelLogoCentral = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -62,6 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panelDesktop.SuspendLayout();
+            this.panelLogoCentral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // labelClose
@@ -421,6 +428,7 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.White;
+            this.panelDesktop.Controls.Add(this.panelLogoCentral);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDesktop.Location = new System.Drawing.Point(205, 89);
@@ -434,6 +442,54 @@
             this.hourTimer.Enabled = true;
             this.hourTimer.Interval = 1000;
             this.hourTimer.Tick += new System.EventHandler(this.hourTimer_Tick);
+            // 
+            // panelLogoCentral
+            // 
+            this.panelLogoCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelLogoCentral.Controls.Add(this.label6);
+            this.panelLogoCentral.Controls.Add(this.iconPictureBox5);
+            this.panelLogoCentral.Controls.Add(this.label5);
+            this.panelLogoCentral.Location = new System.Drawing.Point(234, 127);
+            this.panelLogoCentral.Name = "panelLogoCentral";
+            this.panelLogoCentral.Size = new System.Drawing.Size(364, 219);
+            this.panelLogoCentral.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(31, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(305, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "System Shock Absorber";
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.CompressArrowsAlt;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.iconPictureBox5.IconSize = 97;
+            this.iconPictureBox5.Location = new System.Drawing.Point(133, 28);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(105, 97);
+            this.iconPictureBox5.TabIndex = 2;
+            this.iconPictureBox5.TabStop = false;
+            this.iconPictureBox5.Click += new System.EventHandler(this.iconPictureBox5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(107, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 56);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "SSAS";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // HomeForm
             // 
@@ -462,6 +518,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelLogoCentral.ResumeLayout(false);
+            this.panelLogoCentral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,5 +553,9 @@
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer hourTimer;
+        private System.Windows.Forms.Panel panelLogoCentral;
+        private System.Windows.Forms.Label label6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private System.Windows.Forms.Label label5;
     }
 }

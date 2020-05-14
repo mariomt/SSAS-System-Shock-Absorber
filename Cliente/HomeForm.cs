@@ -68,7 +68,8 @@ namespace Cliente
 
         private void openControl(UserControl control, string headerTitle = "Inicio")
         {
-            
+
+            panelLogoCentral.Visible = false;
             if(activeControl != null)
             {
                 if (activeControl.GetType().Equals(control.GetType()))
@@ -132,6 +133,16 @@ namespace Cliente
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconPictureBox5_Click(object sender, EventArgs e)
         {
 
         }
