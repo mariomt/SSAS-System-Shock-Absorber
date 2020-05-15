@@ -134,7 +134,7 @@ namespace Cliente.UsersControls
                 loteseleccionado.Cantidad = int.Parse(selectedRow.Cells[4].Value.ToString());
                 loteseleccionado.Activo = (bool)selectedRow.Cells[5].Value;
 
-                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableService);
+                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableLote);
 
                 BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
                 if (bitacoraOP != null)
