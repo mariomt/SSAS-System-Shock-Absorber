@@ -71,6 +71,7 @@ namespace Cliente.UsersControls
                 batchDomain.insertBatch(ref batch);
 
                 Tools.Alert("Lote Guardado!", Form_Alert.enumType.Success);
+                cargardgvBatches();
                 cleanForm();
             }
             else
