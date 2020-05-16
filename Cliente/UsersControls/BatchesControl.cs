@@ -134,12 +134,22 @@ namespace Cliente.UsersControls
                 loteseleccionado.Cantidad = int.Parse(selectedRow.Cells[4].Value.ToString());
                 loteseleccionado.Activo = (bool)selectedRow.Cells[5].Value;
 
+                BatchDomain lote = new BatchDomain();
+                dynamic obj = lote.GetBatchProductAvailable(loteseleccionado.LoteID);
+
+                if(obj.Cantidad <= 0)
+                {
+                    Tools.AlertInToApp("No se puede desactivar este producto ya que no hay en existencia",Form_Alert.enumType.Info);
+                    return;
+                }
+
+
                 Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableLote);
 
                 BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
                 if (bitacoraOP != null)
                 {
-                    BatchDomain lote = new BatchDomain();
+                    
                     loteseleccionado.Activo = false;
                     if (lote.bajalote(loteseleccionado, bitacoraOP))
                     {
