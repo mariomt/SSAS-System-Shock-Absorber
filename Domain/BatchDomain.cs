@@ -61,6 +61,11 @@ namespace Domain
             return new BatchDAO().SearchLotes(parametro);
         }
 
+        public object GetBatchProductAvailable(int pBatchID)
+        {
+            return new BatchDAO().GetBatchProductAvailable(pBatchID);
+        }
+
         public string validateFormInsertBatch(int ProductID,string Importe,string cantidad)
         {
             if (ProductID < 0)

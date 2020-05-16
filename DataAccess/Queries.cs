@@ -63,7 +63,15 @@ namespace DataAccess
         public const string selectAllbatch = @"SELECT LoteID,ProductoID,FechaHora,Importe, Cantidad,Activo FROM  LoteProducto";
         public const string bajalote = @"UPDATE LoteProducto SET Activo=@active WHERE LoteID=@id";
         public const string searchLotesBydescription = @"SELECT LoteID,ProductoID,FechaHora,Importe,Cantidad,Activo FROM LoteProducto where LoteID LIKE @lote";
-
+        public const string batchProductAvailable = @"SELECT @batchID AS LoteID, ((
+	                                                    SELECT SUM(Cantidad) AS Vendido
+		                                                    FROM [SystemShockAbsorber].[dbo].[LoteProducto]
+		                                                    WHERE LoteID <=@batchID AND ProductoID=(SELECT ProductoID FROM [SystemShockAbsorber].[dbo].[LoteProducto] WHERE LoteID=@batchID)
+		                                                    GROUP BY ProductoID)-(
+	                                                    SELECT SUM(Cantidad)AS Cantidad 
+		                                                    FROM [SystemShockAbsorber].[dbo].[DescripcionVenta]
+		                                                    WHERE ProductoID=(SELECT ProductoID FROM [SystemShockAbsorber].[dbo].[LoteProducto] WHERE LoteID=@batchID)
+		                                                    GROUP BY ProductoID)) AS Cantidad";
         #endregion
 
         #region

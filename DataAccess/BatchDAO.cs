@@ -49,6 +49,14 @@ namespace DataAccess
             return dbConn.Query<Batch>(Queries.searchLotesBydescription, new { lote = "%" + parametro + "%" }).ToList();
         }
 
+        public object GetBatchProductAvailable(int pBatchID)
+        {
+            return dbConn.Query<object>(Queries.batchProductAvailable, new
+            {
+                batchID = pBatchID
+            }).FirstOrDefault();
+        }
+
 
         public IEnumerable<Batch> getBatch()
         {

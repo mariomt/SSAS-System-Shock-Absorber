@@ -1,10 +1,12 @@
 ﻿
+using System;
 using System.Windows.Forms;
 
 namespace Cliente
 {
     public class Tools
     {
+        [Obsolete("Alert method is deprecated, please use AlertInToApp method")]
         public static void Alert(string msg, Form_Alert.enumType type)
         {
             Form_Alert frm = new Form_Alert();
