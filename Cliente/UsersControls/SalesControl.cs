@@ -234,6 +234,7 @@ namespace Cliente.UsersControls
             txtTotal.Text = "00.00";
             dataGridView1.Rows.Clear();
             venta.descripcion.Clear();
+            txtSearch.Focus();
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -276,7 +277,7 @@ namespace Cliente.UsersControls
             double amount = double.Parse(txtTotal.Text.Trim());
             do
             {
-                message = ShowInput.ShowDialog(this, "Cantidad recibida:", "Cobro de venta");
+                message = ShowInput.ShowDialog(this, "Cantidad recibida:", "Cobro de venta", false);
                 if (message.Trim() == "cancelled")
                     break;
 

@@ -260,6 +260,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Name = "ProductInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información de producto";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

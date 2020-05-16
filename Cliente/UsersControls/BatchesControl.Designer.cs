@@ -150,6 +150,7 @@
             this.activoChk.TabIndex = 9;
             this.activoChk.Text = "Activo";
             this.activoChk.UseVisualStyleBackColor = true;
+            this.activoChk.Visible = false;
             // 
             // cancelBtn
             // 
@@ -242,9 +243,13 @@
             // 
             // btnDesactive
             // 
+            this.btnDesactive.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDesactive.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDesactive.FlatAppearance.BorderSize = 0;
+            this.btnDesactive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesactive.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDesactive.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDesactive.ForeColor = System.Drawing.Color.White;
             this.btnDesactive.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDesactive.IconColor = System.Drawing.Color.Black;
             this.btnDesactive.IconSize = 16;
@@ -259,9 +264,13 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconSize = 16;
@@ -276,6 +285,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBuscar.Location = new System.Drawing.Point(346, 109);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(290, 20);

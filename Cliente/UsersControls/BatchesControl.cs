@@ -65,7 +65,7 @@ namespace Cliente.UsersControls
                     FechaHora = DateTime.Now,
                     Importe = importeDecimal,
                     Cantidad = cantidadInt,
-                    Activo = activoChk.Checked
+                    Activo = true
                 };
 
                 batchDomain.insertBatch(ref batch);
