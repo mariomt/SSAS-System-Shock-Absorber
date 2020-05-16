@@ -98,10 +98,16 @@ namespace Domain
       
         public bool bajalote(Batch batch, BitacoraOperaciones motivo)
         {
-
             bool result = false;
             using (BatchDAO batchDAO = new BatchDAO())
             {
+                dynamic obj = batchDAO.GetBatchProductAvailable(batch.LoteID);
+                int cant = batch.Cantidad;
+                if (obj.Cantidad != null && (obj.Cantidad < batch.Cantidad))
+                {
+                    cant = obj.Cantidad;
+                }
+               
                 using (var connection = batchDAO.Connection)
                 {
                     connection.Open();
@@ -113,11 +119,19 @@ namespace Domain
                         {
                             result = batchDAO.bajalote(batch, transaction);
 
-
                             if (result)
-                                transaction.Commit();
+                            {
+                                
+                                result = new ProductDAO(connection).updateDisponibilidad(batch.ProductoID,0-cant, transaction);
+                                if (result)
+                                    transaction.Commit();
+                                else
+                                    transaction.Rollback();
+                            }
                             else
+                            {
                                 transaction.Rollback();
+                            }
 
                         }
                         else
