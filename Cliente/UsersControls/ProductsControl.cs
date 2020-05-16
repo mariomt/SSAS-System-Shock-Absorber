@@ -40,12 +40,12 @@ namespace Cliente
                 };
 
                 new ProductDomain().insertNewProduct(ref producto);
-                Tools.Alert("Producto Guardado!", Form_Alert.enumType.Success);
+                Tools.AlertInToApp("Producto Guardado!", Form_Alert.enumType.Success);
                 cargardgv();
             }
             else
             {
-                Tools.Alert(validacion, Form_Alert.enumType.Error);
+                Tools.AlertInToApp(validacion, Form_Alert.enumType.Error);
             }
         
             this.cleanForm();
@@ -154,13 +154,13 @@ namespace Cliente
                     productoseleccionado.Activo = false;
                     if (producto.bajaproducto(productoseleccionado, bitacoraOP))
                     {
-                        Tools.Alert("Se dio de baja el producto", Form_Alert.enumType.Success);
+                        Tools.AlertInToApp("Se dio de baja el producto", Form_Alert.enumType.Success);
 
                         cargardgv();
                     }
                     else
                     {
-                        Tools.Alert("Error al guardar la información", Form_Alert.enumType.Error);
+                        Tools.AlertInToApp("Error al guardar la información", Form_Alert.enumType.Error);
                     }
                         
 
@@ -169,7 +169,7 @@ namespace Cliente
             }
             catch (ArgumentOutOfRangeException)
             {
-                Tools.Alert("No se seleccionó ningún registro",Form_Alert.enumType.Error);
+                Tools.AlertInToApp("No se seleccionó ningún registro",Form_Alert.enumType.Error);
             }
             
 

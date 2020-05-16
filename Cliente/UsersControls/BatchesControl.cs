@@ -70,13 +70,13 @@ namespace Cliente.UsersControls
 
                 batchDomain.insertBatch(ref batch);
 
-                Tools.Alert("Lote Guardado!", Form_Alert.enumType.Success);
+                Tools.AlertInToApp("Lote Guardado!", Form_Alert.enumType.Success);
                 cargardgvBatches();
                 cleanForm();
             }
             else
             {
-                Tools.Alert(validateMsg,Form_Alert.enumType.Warning);
+                Tools.AlertInToApp(validateMsg,Form_Alert.enumType.Warning);
             }
 
         }
@@ -153,13 +153,13 @@ namespace Cliente.UsersControls
                     loteseleccionado.Activo = false;
                     if (lote.bajalote(loteseleccionado, bitacoraOP))
                     {
-                        Tools.Alert("Se dio de baja el lote", Form_Alert.enumType.Success);
+                        Tools.AlertInToApp("Se dio de baja el lote", Form_Alert.enumType.Success);
                          
                         cargardgvBatches();
                     }
                     else
                     {
-                        Tools.Alert("Error al guardar la informacion", Form_Alert.enumType.Error);
+                        Tools.AlertInToApp("Error al guardar la informacion", Form_Alert.enumType.Error);
                     }
 
 

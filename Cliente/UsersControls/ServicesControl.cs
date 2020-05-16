@@ -72,12 +72,12 @@ namespace Cliente
                 bool result = new ServiceDomain().insertNewProduct(service);
                 if (result)
                 {
-                    Tools.Alert("Servicio guardado con éxito!", Form_Alert.enumType.Success);
+                    Tools.AlertInToApp("Servicio guardado con éxito!", Form_Alert.enumType.Success);
                     clearTextBox();
                     loadDataGridView();
                 }
                 else
-                    Tools.Alert("Ups! Algo salio mal.", Form_Alert.enumType.Success);
+                    Tools.AlertInToApp("Ups! Algo salio mal.", Form_Alert.enumType.Success);
             }
             catch
             {
@@ -119,17 +119,17 @@ namespace Cliente
                         service.Activo = false;
                         ServiceDomain svd = new ServiceDomain();
                         svd.disableService(service, bitacora);
-                        Tools.Alert("El Servicio se desactivo con éxito.", Form_Alert.enumType.Success);
+                        Tools.AlertInToApp("El Servicio se desactivo con éxito.", Form_Alert.enumType.Success);
                         loadDataGridView();
                     }
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    Tools.Alert("No se selecciono nungun registro", Form_Alert.enumType.Error);
+                    Tools.AlertInToApp("No se selecciono nungun registro", Form_Alert.enumType.Error);
                 }
                 catch (ServiceDomainException err)
                 {
-                    Tools.Alert(err.Message, Form_Alert.enumType.Error);
+                    Tools.AlertInToApp(err.Message, Form_Alert.enumType.Error);
                 }
             }
                 

@@ -45,14 +45,14 @@ namespace Cliente.UsersControls
             {
                 if(cb_Rol.SelectedIndex < 0)
                 {
-                    Tools.Alert("No se seleccionó un rol", Form_Alert.enumType.Error);
+                    Tools.AlertInToApp("No se seleccionó un rol", Form_Alert.enumType.Error);
                     return;
                 }
 
 
                 if (txt_Name.Text.Trim().Length<2 || txt_LastName1.Text.Trim().Length < 2 || txt_LastName2.Text.Trim().Length < 2 || txt_User.Text.Trim().Length < 2 || txt_Pass.Text.Trim().Length < 2)
                 {
-                    Tools.Alert("Asegurece de llenar correctamente los campos", Form_Alert.enumType.Error);
+                    Tools.AlertInToApp("Asegurece de llenar correctamente los campos", Form_Alert.enumType.Error);
                     return;
                 }
                 Rol rol = new Rol()
@@ -73,7 +73,7 @@ namespace Cliente.UsersControls
                 };
 
                 new UserDomain().insertNewUser(ref user);
-                Tools.Alert("Usuario Registrado!", Form_Alert.enumType.Success);
+                Tools.AlertInToApp("Usuario Registrado!", Form_Alert.enumType.Success);
                 
             }
             else
@@ -96,7 +96,7 @@ namespace Cliente.UsersControls
                 };
 
                 new UserDomain().updateUserByID(ref user);
-                Tools.Alert("Usuario Actualizado!", Form_Alert.enumType.Success);
+                Tools.AlertInToApp("Usuario Actualizado!", Form_Alert.enumType.Success);
             }
             consultarUsuarios("-1");
             cleanForm();
@@ -181,7 +181,7 @@ namespace Cliente.UsersControls
             if(button2.Text== "Eliminar")
             {
                 new UserDomain().deleteUserByID(ref UsuarioSeleccionado);
-                Tools.Alert("Usuario Eliminado!", Form_Alert.enumType.Success);
+                Tools.AlertInToApp("Usuario Eliminado!", Form_Alert.enumType.Success);
             }
             cleanForm();
             consultarUsuarios("-1");
