@@ -84,6 +84,11 @@ namespace Cliente.UsersControls
             }
             else
             {
+                if (!producto.Activo)
+                {
+                    Tools.AlertInToApp("El producto no está activo!", Form_Alert.enumType.Info);
+                    return;
+                }
                 if(producto.Disponibilidad <= 0)
                 {
                     Tools.AlertInToApp("Producto agotado!",Form_Alert.enumType.Info);
@@ -137,6 +142,12 @@ namespace Cliente.UsersControls
             }
             else
             {
+
+                if(!servicio.Activo)
+                {
+                    Tools.AlertInToApp("El servicio no está activo!", Form_Alert.enumType.Info);
+                    return;
+                }
                 string message = "";
                 double price = 0;
                 do
