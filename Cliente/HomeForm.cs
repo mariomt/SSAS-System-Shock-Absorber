@@ -146,5 +146,11 @@ namespace Cliente
         {
 
         }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            loginForm.Show();
+            this.Close();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.labelClose = new System.Windows.Forms.Label();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelMenuContent = new System.Windows.Forms.Panel();
+            this.logOutBtn = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.batchesBtn = new FontAwesome.Sharp.IconButton();
             this.servicesBtn = new FontAwesome.Sharp.IconButton();
@@ -53,11 +54,11 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.panelLogoCentral = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.hourTimer = new System.Windows.Forms.Timer(this.components);
             this.panelSideMenu.SuspendLayout();
             this.panelMenuContent.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -100,6 +101,7 @@
             // panelMenuContent
             // 
             this.panelMenuContent.AutoScroll = true;
+            this.panelMenuContent.Controls.Add(this.logOutBtn);
             this.panelMenuContent.Controls.Add(this.iconButton1);
             this.panelMenuContent.Controls.Add(this.batchesBtn);
             this.panelMenuContent.Controls.Add(this.servicesBtn);
@@ -110,6 +112,32 @@
             this.panelMenuContent.Name = "panelMenuContent";
             this.panelMenuContent.Size = new System.Drawing.Size(205, 491);
             this.panelMenuContent.TabIndex = 1;
+            // 
+            // logOutBtn
+            // 
+            this.logOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOutBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logOutBtn.FlatAppearance.BorderSize = 0;
+            this.logOutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(96)))), ((int)(((byte)(184)))));
+            this.logOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutBtn.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBtn.ForeColor = System.Drawing.Color.White;
+            this.logOutBtn.IconChar = FontAwesome.Sharp.IconChar.DoorClosed;
+            this.logOutBtn.IconColor = System.Drawing.Color.White;
+            this.logOutBtn.IconSize = 24;
+            this.logOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logOutBtn.Location = new System.Drawing.Point(0, 331);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.logOutBtn.Rotation = 0D;
+            this.logOutBtn.Size = new System.Drawing.Size(205, 68);
+            this.logOutBtn.TabIndex = 6;
+            this.logOutBtn.Text = "Cerrar Sesión";
+            this.logOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logOutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
             // iconButton1
             // 
@@ -437,12 +465,6 @@
             this.panelDesktop.TabIndex = 4;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
-            // hourTimer
-            // 
-            this.hourTimer.Enabled = true;
-            this.hourTimer.Interval = 1000;
-            this.hourTimer.Tick += new System.EventHandler(this.hourTimer_Tick);
-            // 
             // panelLogoCentral
             // 
             this.panelLogoCentral.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -454,16 +476,17 @@
             this.panelLogoCentral.Size = new System.Drawing.Size(364, 219);
             this.panelLogoCentral.TabIndex = 0;
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(31, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(305, 31);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "System Shock Absorber";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(107, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 56);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "SSAS";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // iconPictureBox5
             // 
@@ -479,17 +502,22 @@
             this.iconPictureBox5.TabStop = false;
             this.iconPictureBox5.Click += new System.EventHandler(this.iconPictureBox5_Click);
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(107, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 56);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "SSAS";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(31, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(305, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "System Shock Absorber";
+            // 
+            // hourTimer
+            // 
+            this.hourTimer.Enabled = true;
+            this.hourTimer.Interval = 1000;
+            this.hourTimer.Tick += new System.EventHandler(this.hourTimer_Tick);
             // 
             // HomeForm
             // 
@@ -557,5 +585,6 @@
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconButton logOutBtn;
     }
 }

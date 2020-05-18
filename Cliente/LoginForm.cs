@@ -54,7 +54,7 @@ namespace Cliente
         {
             if (txtUser.Text.Length == 0)
             {
-                txtUser.Text = "correo@example.com";
+                txtUser.Text = "NombreDeUsuario";
                 iconPictureBox2.IconColor = SystemColors.ButtonShadow;
             }
             else
@@ -100,6 +100,11 @@ namespace Cliente
             {
                 MainInformation.user = user;
                 HomeForm hf1 = new HomeForm(this, user);
+                iconButton1.Focus();
+                txtPassword.Text = "";
+                txtPassword_Leave(iconButton1,e);
+                txtUser.Text = "";
+                txtUser_Leave(iconButton1,e);
                 hf1.Show();
                 this.Hide();
             }else
