@@ -64,7 +64,7 @@ namespace Cliente
             {
                 Nombre = txtName.Text,
                 Descripcion = txtDescription.Text,
-                Activo = chkActive.Checked
+                Activo = true
             };
 
             try

@@ -45,6 +45,7 @@ namespace Cliente
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
+            lblError.Visible = false;
             txtUser.Clear();
             iconPictureBox2.IconColor = Color.FromArgb(121, 175, 249);
             txtUser.ForeColor = Color.FromArgb(121, 175, 249);
@@ -66,6 +67,7 @@ namespace Cliente
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
+            lblError.Visible = false;
             txtPassword.Clear();
             iconPictureBox3.IconColor = Color.FromArgb(121, 175, 249);
             txtPassword.ForeColor = Color.FromArgb(121, 175, 249);
@@ -90,6 +92,7 @@ namespace Cliente
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            lblError.Visible = false;
             User user = new User()
             {
                 NombreUsuario = txtUser.Text.ToLower(),

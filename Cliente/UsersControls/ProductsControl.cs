@@ -36,7 +36,7 @@ namespace Cliente
                     PrecioVenta = Double.Parse(precioTxt.Text),
                     Disponibilidad = Int32.Parse(disponibilidadTxt.Text),
                     IVA = Double.Parse(IVATxt.Text),
-                    Activo = activoChk.Checked
+                    Activo = true
                 };
 
                 new ProductDomain().insertNewProduct(ref producto);

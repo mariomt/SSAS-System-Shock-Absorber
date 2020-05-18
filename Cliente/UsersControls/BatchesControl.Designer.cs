@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.productoLbl = new System.Windows.Forms.Label();
             this.ProductoCb = new System.Windows.Forms.ComboBox();
@@ -202,9 +203,18 @@
             this.Importe,
             this.Cantidad,
             this.Activo});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBatches.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBatches.GridColor = System.Drawing.Color.White;
             this.dgvBatches.Location = new System.Drawing.Point(346, 135);
             this.dgvBatches.Name = "dgvBatches";
+            this.dgvBatches.RowHeadersVisible = false;
             this.dgvBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBatches.Size = new System.Drawing.Size(470, 314);
             this.dgvBatches.TabIndex = 12;
@@ -212,32 +222,38 @@
             // 
             // LoteID
             // 
+            this.LoteID.FillWeight = 76.14214F;
             this.LoteID.HeaderText = "LoteID";
             this.LoteID.Name = "LoteID";
             this.LoteID.ReadOnly = true;
             // 
             // ProductoID
             // 
+            this.ProductoID.FillWeight = 70.57638F;
             this.ProductoID.HeaderText = "ProductoID";
             this.ProductoID.Name = "ProductoID";
             // 
             // FechaHora
             // 
+            this.FechaHora.FillWeight = 262.8678F;
             this.FechaHora.HeaderText = "FechaHora";
             this.FechaHora.Name = "FechaHora";
             // 
             // Importe
             // 
+            this.Importe.FillWeight = 72.91008F;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
             // 
             // Cantidad
             // 
+            this.Cantidad.FillWeight = 62.59888F;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Activo
             // 
+            this.Activo.FillWeight = 54.90475F;
             this.Activo.HeaderText = "Activo";
             this.Activo.Name = "Activo";
             // 
@@ -329,12 +345,12 @@
         private System.Windows.Forms.DataGridView dgvBatches;
         private FontAwesome.Sharp.IconButton btnDesactive;
         private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoteID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
-        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
