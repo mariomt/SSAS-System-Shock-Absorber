@@ -153,7 +153,6 @@ namespace Cliente.UsersControls
             activoChk.Checked = bool.Parse(usuarioSeleccionado[8].Value.ToString());
 
             button3.Text = "Actualizar";
-            button2.Text = "Eliminar";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -178,11 +177,7 @@ namespace Cliente.UsersControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(button2.Text== "Eliminar")
-            {
-                new UserDomain().deleteUserByID(ref UsuarioSeleccionado);
-                Tools.AlertInToApp("Usuario Eliminado!", Form_Alert.enumType.Success);
-            }
+            
             cleanForm();
             consultarUsuarios("-1");
         }
