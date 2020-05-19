@@ -87,6 +87,7 @@ namespace Cliente.UsersControls
                 if (!producto.Activo)
                 {
                     Tools.AlertInToApp("El producto no está activo!", Form_Alert.enumType.Info);
+                    txtSearch.Focus();
                     return;
                 }
                 if(producto.Disponibilidad <= 0)
@@ -146,13 +147,14 @@ namespace Cliente.UsersControls
                 if(!servicio.Activo)
                 {
                     Tools.AlertInToApp("El servicio no está activo!", Form_Alert.enumType.Info);
+                    txtSearch.Focus();
                     return;
                 }
                 string message = "";
                 double price = 0;
                 do
-                { 
-                    message = ShowInput.ShowDialog(this, "Ingrese el precio del servicio:", "Precio de servicio");
+                {
+                    message = ShowInput.ShowDialog(this, "Ingrese el precio del servicio:", "Precio de servicio", false);
                     if (message.Trim() == "cancelled")
                         break;
 
