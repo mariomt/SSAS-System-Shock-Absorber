@@ -19,6 +19,7 @@ namespace Cliente
     public partial class ProductsControl : UserControl
     {
         Product productoseleccionado;
+        int productoseleccionadoId = 0;
 
         public ProductsControl()
         {
@@ -38,17 +39,34 @@ namespace Cliente
                     IVA = Double.Parse(IVATxt.Text),
                     Activo = activoChk.Checked
                 };
-
-                new ProductDomain().insertNewProduct(ref producto);
-                Tools.AlertInToApp("Producto Guardado!", Form_Alert.enumType.Success);
-                cargardgv();
+                if (button1.Text == "Agregar")
+                {
+                    productDomain.insertNewProduct(ref producto);
+                    Tools.AlertInToApp("Producto Guardado!", Form_Alert.enumType.Success);
+                    cargardgv();
+                    cleanForm();
+                } else if(button1.Text == "Actualizar")
+                {
+                    producto.ProductoID = this.productoseleccionadoId;
+                    if (productDomain.updateProduct(producto))
+                    {
+                        Tools.AlertInToApp("Producto actualizado con éxito!", Form_Alert.enumType.Success);
+                        cargardgv();
+                        cleanForm();
+                    }
+                    else
+                        Tools.AlertInToApp("Ups! ocurrio un error, intentalo de nuevo.", Form_Alert.enumType.Error);
+                }
+                else
+                {
+                    Tools.AlertInToApp(string.Format("Operación {0} no valida", button1.Text), Form_Alert.enumType.Error);
+                }
+                
             }
             else
             {
                 Tools.AlertInToApp(validacion, Form_Alert.enumType.Error);
             }
-        
-            this.cleanForm();
             
         }
 
@@ -60,6 +78,9 @@ namespace Cliente
             disponibilidadTxt.Text = "";
             IVATxt.Text = "";
             activoChk.Checked = true;
+
+            button1.Text = "Agregar";
+            this.productoseleccionadoId = 0;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -102,28 +123,13 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            cleanForm();
         }
 
         private void ProductsControl_Load(object sender, EventArgs e)
         {
 
             cargardgv();
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void disponibilidadTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void descripcionTxt_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -172,11 +178,21 @@ namespace Cliente
                 Tools.AlertInToApp("No se seleccionó ningún registro",Form_Alert.enumType.Error);
             }
             
-
-
-
-
         }
-       
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellCollection usuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells;
+            var id = usuarioSeleccionado[0].Value;
+            this.productoseleccionadoId = Int32.Parse(id.ToString());
+
+            descripcionTxt.Text = usuarioSeleccionado[1].Value.ToString();
+            IVATxt.Text = usuarioSeleccionado[2].Value.ToString();
+            disponibilidadTxt.Text = usuarioSeleccionado[4].Value.ToString();
+            precioTxt.Text = usuarioSeleccionado[3].Value.ToString();
+            activoChk.Checked = bool.Parse(usuarioSeleccionado[5].Value.ToString());
+
+            button1.Text = "Actualizar";
+        }
     }
 }

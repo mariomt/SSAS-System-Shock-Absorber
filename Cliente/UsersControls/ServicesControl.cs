@@ -112,7 +112,7 @@ namespace Cliente
                 }
                 else
                 {
-                    Tools.AlertInToApp(string.Format("Operacion {0} no valida",button2.Text), Form_Alert.enumType.Error);
+                    Tools.AlertInToApp(string.Format("Operación {0} no valida",button2.Text), Form_Alert.enumType.Error);
                 }
             }
             catch

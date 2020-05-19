@@ -21,6 +21,7 @@ namespace Cliente.UsersControls
             InitializeComponent();
             loadCbRol();
             consultarUsuarios("-1");
+            txt_Pass.UseSystemPasswordChar = true;
         }
 
         private void loadCbRol()
