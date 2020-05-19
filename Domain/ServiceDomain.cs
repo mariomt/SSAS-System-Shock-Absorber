@@ -20,6 +20,11 @@ namespace Domain
         {
             return new ServiceDAO().insertNewService(service);
         }
+
+        public bool UpdateService(Service pService)
+        {
+            return new ServiceDAO().UpdateService(pService);
+        }
         public IEnumerable<Service> GetAll()
         {
             return new ServiceDAO().GetAll();

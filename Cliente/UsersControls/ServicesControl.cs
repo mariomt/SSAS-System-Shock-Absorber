@@ -15,6 +15,7 @@ namespace Cliente
     public partial class ServicesControl : UserControl 
     {
         private Service service = null;
+        private int servicioSeleccionado = 0;
         public ServicesControl()
         {
             InitializeComponent();
@@ -60,24 +61,59 @@ namespace Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (txtName.Text.Length<1)
+            {
+                Tools.AlertInToApp("El servicio debe tener un nombre",Form_Alert.enumType.Error);
+                return;
+            }
+            if (txtDescription.Text.Length < 1)
+            {
+                Tools.AlertInToApp("El servicio debe tener una descripción", Form_Alert.enumType.Error);
+                return;
+            }
             var service = new Service()
             {
                 Nombre = txtName.Text,
                 Descripcion = txtDescription.Text,
-                Activo = true
+                Activo = chkActive.Checked
             };
 
             try
             {
-                bool result = new ServiceDomain().insertNewProduct(service);
-                if (result)
+                if(button2.Text == "Agregar")
                 {
-                    Tools.AlertInToApp("Servicio guardado con éxito!", Form_Alert.enumType.Success);
-                    clearTextBox();
-                    loadDataGridView();
+                    bool result = new ServiceDomain().insertNewProduct(service);
+                    if (result)
+                    {
+                        Tools.AlertInToApp("Servicio guardado con éxito!", Form_Alert.enumType.Success);
+                        clearTextBox();
+                        loadDataGridView();
+                    }
+                    else
+                        Tools.AlertInToApp("Ups! Algo salio mal.", Form_Alert.enumType.Error);
+                } else if (button2.Text == "Actualizar")
+                {
+                    if (servicioSeleccionado <= 0)
+                    {
+                        Tools.AlertInToApp("El servicio no se selecionó correctamente", Form_Alert.enumType.Error);
+                        return;
+                    }
+
+                    service.ServicioID = this.servicioSeleccionado;
+                    bool result = new ServiceDomain().UpdateService(service);
+                    if (result)
+                    {
+                        Tools.AlertInToApp("Servicio editado con éxito!", Form_Alert.enumType.Success);
+                        clearTextBox();
+                        loadDataGridView();
+                    }
+                    else
+                        Tools.AlertInToApp("Ups! Algo salio mal.", Form_Alert.enumType.Error);
                 }
                 else
-                    Tools.AlertInToApp("Ups! Algo salio mal.", Form_Alert.enumType.Success);
+                {
+                    Tools.AlertInToApp(string.Format("Operacion {0} no valida",button2.Text), Form_Alert.enumType.Error);
+                }
             }
             catch
             {
@@ -90,6 +126,8 @@ namespace Cliente
             txtName.Clear();
             txtDescription.Clear();
             chkActive.Checked = true;
+            button2.Text = "Agregar";
+            this.servicioSeleccionado = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,8 +173,17 @@ namespace Cliente
                 
         }
 
-     
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellCollection usuarioSeleccionado = dataGridView1.Rows[e.RowIndex].Cells;
+            var id = usuarioSeleccionado[0].Value;
+            this.servicioSeleccionado = Int32.Parse(id.ToString());
 
+            txtName.Text = usuarioSeleccionado[1].Value.ToString();
+            txtDescription.Text = usuarioSeleccionado[2].Value.ToString();
+            chkActive.Checked = bool.Parse(usuarioSeleccionado[3].Value.ToString());
 
+            button2.Text = "Actualizar";
+        }
     }
 }

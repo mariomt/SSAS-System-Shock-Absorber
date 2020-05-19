@@ -51,6 +51,17 @@ namespace DataAccess
 
             return result > 0;
         }
+
+        public bool UpdateService(Service pService)
+        {
+            return dbConn.Execute(Queries.updateService, new
+            {
+                name= pService.Nombre,
+                desc = pService.Descripcion,
+                active = pService.Activo,
+                IdService = pService.ServicioID
+            }) > 0;
+        }
         public IEnumerable<Service> GetAll()
         {
             return dbConn.Query<Service>(Queries.selectAllServices).ToList();

@@ -151,7 +151,7 @@ namespace Cliente.UsersControls
                 string message = "";
                 double price = 0;
                 do
-                {
+                { 
                     message = ShowInput.ShowDialog(this, "Ingrese el precio del servicio:", "Precio de servicio");
                     if (message.Trim() == "cancelled")
                         break;

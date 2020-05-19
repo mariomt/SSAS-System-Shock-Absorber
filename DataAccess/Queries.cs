@@ -46,6 +46,7 @@ namespace DataAccess
         public const string selectAllServices = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios";
         public const string selectServiceById = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios WHERE ServicioID=@servicioID";
         public const string selectServicesByName = @"SELECT ServicioID, Nombre, Descripcion, Activo FROM Servicios WHERE Nombre LIKE @service";
+        public const string updateService = @"UPDATE Servicios SET Nombre=@name, Descripcion=@desc, Activo=@active WHERE ServicioID=@IdService";
         public const string disablService = @"UPDATE Servicios SET Activo=@active WHERE ServicioID=@id";
         public const string insertService = @"INSERT INTO Servicios(Nombre, Descripcion, Activo) VALUES(@name,@description,@active)";
         #endregion

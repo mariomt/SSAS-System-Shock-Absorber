@@ -12,7 +12,7 @@ namespace Cliente
         private EnumTypeOperation cancellationAttr;
         private BitacoraOperaciones bitacora;
         private bool saveReason = false;
-        public bool isSaved { get { return saveReason;  } }
+        public bool isSaved { get { return saveReason; } }
 
         #region Constuctors
         /// <summary>
@@ -42,6 +42,7 @@ namespace Cliente
             input.Text = title;
             input.btnAceptar.Click += new EventHandler(handlerCancellationAceptar);
             input.textBox1.TextChanged += new EventHandler(handlerTypedMotivo);
+            input.btnCancelar.Click += new EventHandler(handlerCancellBtn);
         }
 
         #endregion
@@ -55,18 +56,23 @@ namespace Cliente
             else
                 message += "Producto?";
 
-            DialogResult result = MessageBox.Show(message, "Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show(message, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
                 bitacora = new BitacoraOperaciones()
                 {
                     UsuarioID = MainInformation.user.UsuarioID,
                     TipoID = (int)cancellationAttr,
-                    Comentario= reason,
+                    Comentario = reason,
                     FechaHora = DateTime.Now
                 };
                 input.Hide();
             }
+        }
+
+        private void handlerCancellBtn(object sender, EventArgs e)
+        {
+            input.Hide();
         }
         private void handlerTypedMotivo(object sender, EventArgs e)
         {

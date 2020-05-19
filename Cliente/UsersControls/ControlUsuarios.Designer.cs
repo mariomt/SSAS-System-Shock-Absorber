@@ -33,6 +33,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_Rol = new System.Windows.Forms.ComboBox();
+            this.activoChk = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_ln1 = new System.Windows.Forms.Label();
@@ -52,12 +53,11 @@
             this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.activoChk = new System.Windows.Forms.CheckBox();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGv)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -108,6 +108,18 @@
             this.cb_Rol.Name = "cb_Rol";
             this.cb_Rol.Size = new System.Drawing.Size(121, 21);
             this.cb_Rol.TabIndex = 28;
+            // 
+            // activoChk
+            // 
+            this.activoChk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.activoChk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activoChk.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.activoChk.Location = new System.Drawing.Point(3, 30);
+            this.activoChk.Name = "activoChk";
+            this.activoChk.Size = new System.Drawing.Size(164, 23);
+            this.activoChk.TabIndex = 30;
+            this.activoChk.Text = "Activo";
+            this.activoChk.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -295,6 +307,12 @@
             this.RolID.ReadOnly = true;
             this.RolID.Visible = false;
             // 
+            // Activo
+            // 
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            // 
             // iconButton1
             // 
             this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -362,24 +380,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // activoChk
-            // 
-            this.activoChk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.activoChk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activoChk.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.activoChk.Location = new System.Drawing.Point(3, 30);
-            this.activoChk.Name = "activoChk";
-            this.activoChk.Size = new System.Drawing.Size(164, 23);
-            this.activoChk.TabIndex = 30;
-            this.activoChk.Text = "Activo";
-            this.activoChk.UseVisualStyleBackColor = true;
-            // 
-            // Activo
-            // 
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
             // 
             // ControlUsuarios
             // 
