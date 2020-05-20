@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using System;
 using System.Collections.Generic;
 
 namespace Domain
@@ -15,20 +16,28 @@ namespace Domain
         /// <param name="user">Entidad de usuario con correo y password setiados</param>
         public bool logIn(ref User user)
         {
-            User newUser = new UserDAO().logIn(user);
-            if(newUser!= null)
+            try
             {
-                user.UsuarioID = newUser.UsuarioID;
-                user.NombreUsuario = newUser.NombreUsuario;
-                user.Contrasena = "";
-                user.Nombre = newUser.Nombre;
-                user.ApellidoPaterno = newUser.ApellidoPaterno;
-                user.ApellidoMaterno = newUser.ApellidoMaterno;
-                user.Activo = newUser.Activo;
-                user.rol = newUser.rol;
-                return true;
+                User newUser = new UserDAO().logIn(user);
+                if (newUser != null)
+                {
+                    user.UsuarioID = newUser.UsuarioID;
+                    user.NombreUsuario = newUser.NombreUsuario;
+                    user.Contrasena = "";
+                    user.Nombre = newUser.Nombre;
+                    user.ApellidoPaterno = newUser.ApellidoPaterno;
+                    user.ApellidoMaterno = newUser.ApellidoMaterno;
+                    user.Activo = newUser.Activo;
+                    user.rol = newUser.rol;
+                    return true;
+                }
+                return false;
+            } 
+            catch(Exception ex)
+            {
+                throw ex;
             }
-            return false;
+            
         }
         public void insertNewUser(ref User user)
         {

@@ -98,23 +98,38 @@ namespace Cliente
                 NombreUsuario = txtUser.Text.ToLower(),
                 Contrasena = txtPassword.Text
             };
-
-            if(new UserDomain().logIn(ref user))
+            try
             {
-                MainInformation.user = user;
-                HomeForm hf1 = new HomeForm(this, user);
-                iconButton1.Focus();
-                txtPassword.Text = "";
-                txtPassword_Leave(iconButton1,e);
-                txtUser.Text = "";
-                txtUser_Leave(iconButton1,e);
-                hf1.Show();
-                this.Hide();
-            }else
-            {
-                lblError.Text = "Usuario y/o contraseña incorrectos.";
-                lblError.Visible = true;
+                if (new UserDomain().logIn(ref user))
+                {
+                    MainInformation.user = user;
+                    HomeForm hf1 = new HomeForm(this, user);
+                    iconButton1.Focus();
+                    txtPassword.Text = "";
+                    txtPassword_Leave(iconButton1, e);
+                    txtUser.Text = "";
+                    txtUser_Leave(iconButton1, e);
+                    hf1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    lblError.Text = "Usuario y/o contraseña incorrectos.";
+                    lblError.Visible = true;
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("------------");
+                Console.WriteLine(ex.Data);
+
+                if (ex.GetType() == typeof(System.Data.SqlClient.SqlException)  && ex.Message.Contains("error: 40"))
+                {
+                    Tools.Alert("No se pudo establecer conexión con la Base de Datos", Form_Alert.enumType.Error);
+                }
+            }
+            
         }
     }
 }

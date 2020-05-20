@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Entities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -37,17 +38,25 @@ namespace DataAccess
         /// <returns>Regesa un nuevo usuario</returns>
         public User logIn(User pUser)
         {
-            var result = dbConn.Query<User, Rol, User>(Queries.selectUserByCredentials,
-                (user, rol) => { user.rol = rol; return user; }, new {
-                    usuario = pUser.NombreUsuario, pass = pUser.Contrasena
-                }, splitOn: "UsuarioID,RolID").FirstOrDefault();
-
-            if(result != null)
+            try
             {
-                result.Contrasena = string.Empty;
+                var result = dbConn.Query<User, Rol, User>(Queries.selectUserByCredentials,
+                    (user, rol) => { user.rol = rol; return user; }, new {
+                        usuario = pUser.NombreUsuario, pass = pUser.Contrasena
+                    }, splitOn: "UsuarioID,RolID").FirstOrDefault();
+
+                if(result != null)
+                {
+                    result.Contrasena = string.Empty;
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            return result;
         }
         public void insertUser(User user)
         {
