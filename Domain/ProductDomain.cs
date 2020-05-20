@@ -112,11 +112,17 @@ namespace Domain
                 return "El campo 'Descripcion' solo acepta letras y números";
             }
 
-            Regex IVARegEx = new Regex(@"^\d{1,}\.{1}\d{2}$"); //patrón de número con dos decimales despues del punto
-            var IVAMatch = IVARegEx.Match(IVA.ToString());
+            Regex PrecioVentaIVARegEx = new Regex(@"(^\d{1,}\.{1}\d{1,}$)|(^\d*$)"); //patrón de número con dos decimales despues del punto
+            var IVAMatch = PrecioVentaIVARegEx.Match(IVA.ToString());
             if (!IVAMatch.Success)
             {
-                return "El campo 'IVA' solo acepta números con 2 decimales";
+                return "El campo 'IVA' solo acepta números enteros o decimales";
+            }
+
+            var PrecioVentaMatch = PrecioVentaIVARegEx.Match(PrecioVenta.ToString());
+            if (!PrecioVentaMatch.Success)
+            {
+                return "El campo 'PrecioVenta' solo acepta números enteros o decimales";
             }
 
             Regex DisponibilidadRegEx = new Regex(@"^\d{1,}$"); //patrón de número entero
@@ -124,13 +130,6 @@ namespace Domain
             if (!DisponibilidadMatch.Success)
             {
                 return "El campo 'Disponibilidad' solo acepta números enteros";
-            }
-
-            Regex PrecioVentaRegEx = new Regex(@"^\d{1,}\.{1}\d{2}$"); //patrón de número con dos decimales despues del punto
-            var PrecioVentaMatch = PrecioVentaRegEx.Match(PrecioVenta.ToString());
-            if (!PrecioVentaMatch.Success)
-            {
-                return "El campo 'PrecioVenta' solo acepta números enteros";
             }
 
             return "";
