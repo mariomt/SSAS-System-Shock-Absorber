@@ -73,7 +73,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 314);
-            this.flowLayoutPanel1.TabIndex = 11;
+            this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // productoLbl
@@ -93,7 +93,7 @@
             this.ProductoCb.Location = new System.Drawing.Point(13, 33);
             this.ProductoCb.Name = "ProductoCb";
             this.ProductoCb.Size = new System.Drawing.Size(293, 21);
-            this.ProductoCb.TabIndex = 13;
+            this.ProductoCb.TabIndex = 1;
             this.ProductoCb.SelectedIndexChanged += new System.EventHandler(this.ProductoCb_SelectedIndexChanged);
             // 
             // importeLbl
@@ -112,7 +112,7 @@
             this.importeTxt.Location = new System.Drawing.Point(13, 80);
             this.importeTxt.Name = "importeTxt";
             this.importeTxt.Size = new System.Drawing.Size(293, 22);
-            this.importeTxt.TabIndex = 5;
+            this.importeTxt.TabIndex = 2;
             // 
             // Cantidadlbl
             // 
@@ -138,7 +138,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(293, 46);
-            this.panel1.TabIndex = 12;
+            this.panel1.TabIndex = 0;
             // 
             // activoChk
             // 
@@ -148,7 +148,7 @@
             this.activoChk.Location = new System.Drawing.Point(3, 11);
             this.activoChk.Name = "activoChk";
             this.activoChk.Size = new System.Drawing.Size(71, 24);
-            this.activoChk.TabIndex = 9;
+            this.activoChk.TabIndex = 0;
             this.activoChk.Text = "Activo";
             this.activoChk.UseVisualStyleBackColor = true;
             this.activoChk.Visible = false;
@@ -165,7 +165,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(13, 208);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(143, 32);
-            this.cancelBtn.TabIndex = 11;
+            this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "Cancelar";
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -181,7 +181,7 @@
             this.agregarBtn.Location = new System.Drawing.Point(162, 208);
             this.agregarBtn.Name = "agregarBtn";
             this.agregarBtn.Size = new System.Drawing.Size(143, 32);
-            this.agregarBtn.TabIndex = 11;
+            this.agregarBtn.TabIndex = 4;
             this.agregarBtn.Text = "Agregar";
             this.agregarBtn.UseVisualStyleBackColor = false;
             this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
@@ -189,6 +189,7 @@
             // dgvBatches
             // 
             this.dgvBatches.AllowUserToAddRows = false;
+            this.dgvBatches.AllowUserToDeleteRows = false;
             this.dgvBatches.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -214,10 +215,11 @@
             this.dgvBatches.GridColor = System.Drawing.Color.White;
             this.dgvBatches.Location = new System.Drawing.Point(346, 135);
             this.dgvBatches.Name = "dgvBatches";
+            this.dgvBatches.ReadOnly = true;
             this.dgvBatches.RowHeadersVisible = false;
             this.dgvBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBatches.Size = new System.Drawing.Size(470, 314);
-            this.dgvBatches.TabIndex = 12;
+            this.dgvBatches.TabIndex = 9;
             this.dgvBatches.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBatches_CellContentClick);
             // 
             // LoteID
@@ -232,30 +234,35 @@
             this.ProductoID.FillWeight = 70.57638F;
             this.ProductoID.HeaderText = "ProductoID";
             this.ProductoID.Name = "ProductoID";
+            this.ProductoID.ReadOnly = true;
             // 
             // FechaHora
             // 
             this.FechaHora.FillWeight = 262.8678F;
             this.FechaHora.HeaderText = "FechaHora";
             this.FechaHora.Name = "FechaHora";
+            this.FechaHora.ReadOnly = true;
             // 
             // Importe
             // 
             this.Importe.FillWeight = 72.91008F;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
             // 
             // Cantidad
             // 
             this.Cantidad.FillWeight = 62.59888F;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // Activo
             // 
             this.Activo.FillWeight = 54.90475F;
             this.Activo.HeaderText = "Activo";
             this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
             // 
             // btnDesactive
             // 
@@ -273,7 +280,7 @@
             this.btnDesactive.Name = "btnDesactive";
             this.btnDesactive.Rotation = 0D;
             this.btnDesactive.Size = new System.Drawing.Size(87, 27);
-            this.btnDesactive.TabIndex = 13;
+            this.btnDesactive.TabIndex = 8;
             this.btnDesactive.Text = "Desactivar";
             this.btnDesactive.UseVisualStyleBackColor = false;
             this.btnDesactive.Click += new System.EventHandler(this.btnDesactive_Click);
@@ -294,7 +301,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Rotation = 0D;
             this.btnBuscar.Size = new System.Drawing.Size(87, 27);
-            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -305,7 +312,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(346, 109);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(290, 20);
-            this.txtBuscar.TabIndex = 15;
+            this.txtBuscar.TabIndex = 6;
             // 
             // BatchesControl
             // 

@@ -126,6 +126,13 @@ namespace Cliente.UsersControls
             {
                 DataGridViewSelectedRowCollection index = dgvBatches.SelectedRows;
                 DataGridViewRow selectedRow = index[0];
+
+                if (!(bool)selectedRow.Cells[5].Value)
+                {
+                    Tools.AlertInToApp("El lote ya se encuentra desactivado.", Form_Alert.enumType.Info);
+                    return;
+                }
+
                 loteseleccionado = new Batch();
                 loteseleccionado.LoteID = (int)selectedRow.Cells[0].Value;
                 loteseleccionado.ProductoID = (int)selectedRow.Cells[1].Value;

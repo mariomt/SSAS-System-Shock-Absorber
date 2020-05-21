@@ -140,6 +140,13 @@ namespace Cliente
             {
                 DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
                 DataGridViewRow selectedRow = index[0];
+
+                if (!(bool)selectedRow.Cells[5].Value)
+                {
+                    Tools.AlertInToApp("El producto ya se encuentra desactivado.", Form_Alert.enumType.Info);
+                    return;
+                }
+
                 productoseleccionado = new Product();
 
                 productoseleccionado.ProductoID = (int)selectedRow.Cells[0].Value;
@@ -151,7 +158,7 @@ namespace Cliente
 
 
 
-                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableService);
+                Cancellation desactivar = new Cancellation(EnumTypeOperation.DisableProduct);
 
                 BitacoraOperaciones bitacoraOP = desactivar.showDialog(this);
                 if (bitacoraOP != null)

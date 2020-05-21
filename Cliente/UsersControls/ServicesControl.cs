@@ -137,12 +137,20 @@ namespace Cliente
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using (Cancellation cancelar = new Cancellation(EnumTypeOperation.DisableService))
+            
+            try
             {
-                try
+                DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
+                DataGridViewRow row = index[0];
+
+                if (!(bool)row.Cells[3].Value)
                 {
-                    DataGridViewSelectedRowCollection index = dataGridView1.SelectedRows;
-                    DataGridViewRow row = index[0];
+                    Tools.AlertInToApp("El servicio ya se encuentra desactivado.", Form_Alert.enumType.Info);
+                    return;
+                }
+
+                using (Cancellation cancelar = new Cancellation(EnumTypeOperation.DisableService))
+                {
                     service = new Service()
                     {
                         ServicioID = (int)row.Cells[0].Value,
@@ -161,15 +169,16 @@ namespace Cliente
                         loadDataGridView();
                     }
                 }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Tools.AlertInToApp("No se selecciono nungun registro", Form_Alert.enumType.Error);
-                }
-                catch (ServiceDomainException err)
-                {
-                    Tools.AlertInToApp(err.Message, Form_Alert.enumType.Error);
-                }
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                Tools.AlertInToApp("No se selecciono nungun registro", Form_Alert.enumType.Error);
+            }
+            catch (ServiceDomainException err)
+            {
+                Tools.AlertInToApp(err.Message, Form_Alert.enumType.Error);
+            }
+            
                 
         }
 
